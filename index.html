@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="utf-8">
-<title>不同BET不同輪帶成效報告_更新至514</title>
+<title>不同BET不同輪帶成效報告_更新至2026-05-14</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 <style>
@@ -30,7 +30,7 @@ th { background: var(--header-bg); font-weight: bold; }
 .footer { text-align: center; margin-top: 50px; padding: 20px; color: #94a3b8; font-size: 0.9rem; }
 </style></head><body>
 <div class="container">
-<header><h1>不同BET不同輪帶成效報告</h1><p>數據統計截止：2026-05-14 00:00</p></header>
+<header><h1>不同BET不同輪帶超級營運成效報告</h1><p>數據統計截止：2026-05-14 00:00</p></header>
 <div class="tabs">
 <button class="tab-btn active" onclick="openTab('performance')">📊 不同BET成效分析</button>
 <button class="tab-btn" onclick="openTab('retention')">👥 玩家留存深度分析</button>
@@ -265,13 +265,13 @@ th { background: var(--header-bg); font-weight: bold; }
 </div></div>
 </div>
 
-<div class="footer">報告由 AI 數據助理自動產出 | 更新至 2026-05-14 00:00</div>
+<div class="footer">報告由自動化管線產出 | 更新至 2026-05-14 00:00</div>
 </div>
 <script>
-function openTab(t) {
+function openTab(tabName) {
     document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById(t).style.display = 'block';
+    document.getElementById(tabName).style.display = 'block';
     event.currentTarget.classList.add('active');
 }
 const pOps = { responsive: true, maintainAspectRatio: false, plugins: { datalabels: { anchor: 'end', align: 'top', font: { weight: 'bold', size: 9 } } } };
@@ -522,4 +522,5 @@ Chart.register(ChartDataLabels);new Chart(document.getElementById('p_dau_0'), { 
             options: { responsive: true, maintainAspectRatio: false, plugins: { title: { display: true, text: '各區間每日活躍人數 (堆疊)' } }, scales: { x: { stacked: true }, y: { stacked: true } } }
         });
         
+openTab('performance');
 </script></body></html>
