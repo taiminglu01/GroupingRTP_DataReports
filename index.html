@@ -2929,27 +2929,45 @@ const tipsData = {
         `
     },
     'd1-retention': {
-        title: '次日留存 (Day 1 Retention)',
+        title: '次日留存 (Day 1 Retention / D1)',
         content: `
             <p><strong>定義</strong>：玩家在某天（D0）有押注遊玩後，隔天（D1）再次返回遊玩的人數比例。</p>
-            <p><strong>算法</strong>：<code>第 2 天有回訪的玩家數 / 第 1 天活躍的玩家總數</code>。</p>
             <p><strong>說明</strong>：反映遊戲的第一體感與初始吸附能力。</p>
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 12px 0;">
+            <p><strong>📊 表格數據（整體累計留存）算法：</strong></p>
+            <p><code>期間各玩家「第 2 天有回訪」的加總配對數 / 各玩家「活躍天數」總配對數</code>。</p>
+            <p><small style="color: #64748b;">（註：採用無偏誤玩家-日期配對算法，可消除新舊版統計天數不等產生的偏誤，精確反映整體黏性。）</small></p>
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 12px 0;">
+            <p><strong>📈 折線圖數據（每日留存趨勢）算法：</strong></p>
+            <p><code>在 T 日有遊玩且在 T+1 日也回來玩的去重人數 / T 日當天該區間活躍人數 (DAU)</code>。</p>
         `
     },
     'd3-retention': {
         title: '三日留存 (Day 3 Retention / D+2)',
         content: `
             <p><strong>定義</strong>：玩家在某天（D0）有押注遊玩後，第 3 天（D+2）再次返回遊玩的人數比例。</p>
-            <p><strong>算法</strong>：<code>第 3 天有回訪的玩家數 / 第 1 天活躍的玩家總數</code>。</p>
             <p><strong>說明</strong>：反映玩家對遊戲數值與玩法循環的初步認可度。</p>
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 12px 0;">
+            <p><strong>📊 表格數據（整體累計留存）算法：</strong></p>
+            <p><code>期間各玩家「第 3 天有回訪」的加總配對數 / 各玩家「活躍天數」總配對數</code>。</p>
+            <p><small style="color: #64748b;">（註：採用無偏誤玩家-日期配對算法，可消除新舊版統計天數不等產生的偏誤，精確反映整體黏性。）</small></p>
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 12px 0;">
+            <p><strong>📈 折線圖數據（每日留存趨勢）算法：</strong></p>
+            <p><code>在 T 日有遊玩且在 T+2 日也回來玩的去重人數 / T 日當天該區間活躍人數 (DAU)</code>。</p>
         `
     },
     'd7-retention': {
         title: '七日留存 (Day 7 Retention / D+6)',
         content: `
             <p><strong>定義</strong>：玩家在某天（D0）有押注遊玩後，第 8 天（D+6）再次返回遊玩的人數比例。</p>
-            <p><strong>算法</strong>：<code>第 8 天有回訪的玩家數 / 第 1 天活躍的玩家總數</code>。</p>
             <p><strong>說明</strong>：衡量玩家的長線黏性與改版數值模型的持久吸引力。</p>
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 12px 0;">
+            <p><strong>📊 表格數據（整體累計留存）算法：</strong></p>
+            <p><code>期間各玩家「第 8 天有回訪」的加總配對數 / 各玩家「活躍天數」總配對數</code>。</p>
+            <p><small style="color: #64748b;">（註：採用無偏誤玩家-日期配對算法，可消除新舊版統計天數不等產生的偏誤，精確反映整體黏性。）</small></p>
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 12px 0;">
+            <p><strong>📈 折線圖數據（每日留存趨勢）算法：</strong></p>
+            <p><code>在 T 日有遊玩且在 T+6 日也回來玩的去重人數 / T 日當天該區間活躍人數 (DAU)</code>。</p>
         `
     }
 };
