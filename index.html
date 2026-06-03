@@ -37,6 +37,26 @@ th { background: var(--header-bg); font-weight: bold; }
 <button class="tab-btn" onclick="openTab('trend')" style="background-color: #fef08a; color: #854d0e;">📈 趨勢走勢</button>
 </div>
 
+<div class="game-selector-container" style="margin-bottom: 30px; display: flex; justify-content: center; align-items: center; gap: 15px; background: white; padding: 15px 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid var(--border);">
+  <label for="global-game-select" style="font-weight: 800; font-size: 1.1rem; color: var(--primary);">🎯 篩選單一遊戲數據：</label>
+  <select id="global-game-select" onchange="filterGame(this.value)" style="padding: 10px 20px; font-size: 1.05rem; border-radius: 8px; border: 2px solid var(--accent); outline: none; cursor: pointer; color: var(--primary); font-weight: bold; background: white;">
+    <option value="all">🌐 顯示全部遊戲 (預設)</option>
+    <option value="ChilliSlot2">🌶️ 辣椒圓舞曲2 (ChilliSlot2)</option>
+    <option value="PowerOfThunder2">⚡ 雷霆之錘2 (PowerOfThunder2)</option>
+    <option value="RedCliffFire">🔥 火燒赤壁 (RedCliffFire)</option>
+    <option value="RobinHood">🏹 英雄羅賓漢 (RobinHood)</option>
+    <option value="StormOfSeth2">🌪️ 風暴賽特2 (StormOfSeth2)</option>
+    <option value="TKLuBu">🛡️ 戰神呂布 (TKLuBu)</option>
+    <option value="AngryDragon">🐉 魔龍狂怒 (AngryDragon)</option>
+    <option value="ChilliSlot">🌶️ 辣椒圓舞曲 (ChilliSlot)</option>
+    <option value="FuFrogKing">🐸 吉利卡蛙 (FuFrogKing)</option>
+    <option value="StormOfSeth">🌪️ 風暴賽特 (StormOfSeth)</option>
+    <option value="EmberBlade">🗡️ 餘燼之刃 (EmberBlade)</option>
+    <option value="GoldEmpire2">👑 黃金帝國2 (GoldEmpire2)</option>
+    <option value="ROSlot">⚔️ 仙界傳說 (ROSlot)</option>
+  </select>
+</div>
+
 <div id="performance" class="tab-content active">
 <div class="dashboard-section">
 <div class="dashboard-card" style="border-top-color: #059669;"><h3>✨ 改版成效與長線黏著度亮點</h3><ul>
@@ -550,62 +570,62 @@ th { background: var(--header-bg); font-weight: bold; }
 </div>
 
 <div id="buy" class="tab-content">
-<div class="game-section"><div class="game-title">💎 辣椒圓舞曲2 購買免遊分析 (日均)</div>
+<div class="game-section" data-game="ChilliSlot2"><div class="game-title">💎 辣椒圓舞曲2 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_0"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_0"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>免遊1-10線</td><td>141</td><td>41.5</td><td>795,454</td><td>765,663</td><td>96.25%</td></tr><tr><td>免遊1-20線</td><td>95</td><td>46.3</td><td>1,025,818</td><td>961,127</td><td>93.69%</td></tr><tr><td>免遊1-40線</td><td>196</td><td>151.4</td><td>12,964,363</td><td>13,179,168</td><td>101.66%</td></tr><tr><td>免遊2-10線</td><td>89</td><td>99.9</td><td>15,649,636</td><td>16,169,712</td><td>103.32%</td></tr><tr><td>免遊2-20線</td><td>52</td><td>49.2</td><td>19,083,272</td><td>18,179,307</td><td>95.26%</td></tr><tr><td>免遊2-40線</td><td>128</td><td>91.3</td><td>127,180,363</td><td>126,552,141</td><td>99.51%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 雷霆之錘2 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>免遊1-10線</td><td>141</td><td>41.5</td><td>795,454</td><td>765,663</td><td>96.25%</td></tr><tr><td>免遊1-20線</td><td>95</td><td>46.3</td><td>1,025,818</td><td>961,127</td><td>93.69%</td></tr><tr><td>免遊1-40線</td><td>196</td><td>151.4</td><td>12,964,363</td><td>13,179,168</td><td>101.66%</td></tr><tr><td>免遊2-10線</td><td>89</td><td>99.9</td><td>15,649,636</td><td>16,169,712</td><td>103.32%</td></tr><tr><td>免遊2-20線</td><td>52</td><td>49.2</td><td>19,083,272</td><td>18,179,307</td><td>95.26%</td></tr><tr><td>免遊2-40線</td><td>128</td><td>91.3</td><td>127,180,363</td><td>126,552,141</td><td>99.51%</td></tr></tbody></table></div><div class="game-section" data-game="PowerOfThunder2"><div class="game-title">💎 雷霆之錘2 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_1"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_1"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>325</td><td>128.9</td><td>7,926,545</td><td>7,410,582</td><td>93.49%</td></tr><tr><td>購買免遊2</td><td>209</td><td>78.5</td><td>18,207,272</td><td>16,772,767</td><td>92.12%</td></tr><tr><td>購買免遊3</td><td>68</td><td>106.4</td><td>59,332,512</td><td>55,043,709</td><td>92.77%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 火燒赤壁 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>325</td><td>128.9</td><td>7,926,545</td><td>7,410,582</td><td>93.49%</td></tr><tr><td>購買免遊2</td><td>209</td><td>78.5</td><td>18,207,272</td><td>16,772,767</td><td>92.12%</td></tr><tr><td>購買免遊3</td><td>68</td><td>106.4</td><td>59,332,512</td><td>55,043,709</td><td>92.77%</td></tr></tbody></table></div><div class="game-section" data-game="RedCliffFire"><div class="game-title">💎 火燒赤壁 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_2"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_2"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>189</td><td>132.0</td><td>11,846,545</td><td>11,210,605</td><td>94.63%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 英雄羅賓漢 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>189</td><td>132.0</td><td>11,846,545</td><td>11,210,605</td><td>94.63%</td></tr></tbody></table></div><div class="game-section" data-game="RobinHood"><div class="game-title">💎 英雄羅賓漢 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_3"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_3"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>14</td><td>2.4</td><td>282,181</td><td>270,895</td><td>96.00%</td></tr><tr><td>購買免遊2</td><td>10</td><td>0.8</td><td>181,090</td><td>126,940</td><td>70.10%</td></tr><tr><td>購買免遊3</td><td>30</td><td>4.1</td><td>382,545</td><td>244,162</td><td>63.83%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 風暴賽特2 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>14</td><td>2.4</td><td>282,181</td><td>270,895</td><td>96.00%</td></tr><tr><td>購買免遊2</td><td>10</td><td>0.8</td><td>181,090</td><td>126,940</td><td>70.10%</td></tr><tr><td>購買免遊3</td><td>30</td><td>4.1</td><td>382,545</td><td>244,162</td><td>63.83%</td></tr></tbody></table></div><div class="game-section" data-game="StormOfSeth2"><div class="game-title">💎 風暴賽特2 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_4"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_4"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>284</td><td>193.9</td><td>16,867,272</td><td>15,629,026</td><td>92.66%</td></tr><tr><td>購買免遊2</td><td>109</td><td>33.7</td><td>10,690,909</td><td>10,217,589</td><td>95.57%</td></tr><tr><td>購買免遊3</td><td>24</td><td>32.8</td><td>14,509,090</td><td>14,189,818</td><td>97.80%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 戰神呂布 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>284</td><td>193.9</td><td>16,867,272</td><td>15,629,026</td><td>92.66%</td></tr><tr><td>購買免遊2</td><td>109</td><td>33.7</td><td>10,690,909</td><td>10,217,589</td><td>95.57%</td></tr><tr><td>購買免遊3</td><td>24</td><td>32.8</td><td>14,509,090</td><td>14,189,818</td><td>97.80%</td></tr></tbody></table></div><div class="game-section" data-game="TKLuBu"><div class="game-title">💎 戰神呂布 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_5"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_5"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>125</td><td>23.8</td><td>1,956,727</td><td>1,472,675</td><td>75.26%</td></tr><tr><td>購買免遊2</td><td>179</td><td>43.9</td><td>5,395,272</td><td>5,092,828</td><td>94.39%</td></tr><tr><td>購買免遊3</td><td>149</td><td>148.1</td><td>210,035,636</td><td>205,800,460</td><td>97.98%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 魔龍狂怒 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>125</td><td>23.8</td><td>1,956,727</td><td>1,472,675</td><td>75.26%</td></tr><tr><td>購買免遊2</td><td>179</td><td>43.9</td><td>5,395,272</td><td>5,092,828</td><td>94.39%</td></tr><tr><td>購買免遊3</td><td>149</td><td>148.1</td><td>210,035,636</td><td>205,800,460</td><td>97.98%</td></tr></tbody></table></div><div class="game-section" data-game="AngryDragon"><div class="game-title">💎 魔龍狂怒 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_6"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_6"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>43</td><td>23.5</td><td>1,244,000</td><td>1,257,426</td><td>101.08%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 辣椒圓舞曲 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>43</td><td>23.5</td><td>1,244,000</td><td>1,257,426</td><td>101.08%</td></tr></tbody></table></div><div class="game-section" data-game="ChilliSlot"><div class="game-title">💎 辣椒圓舞曲 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_7"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_7"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>13</td><td>1.9</td><td>54,727</td><td>29,446</td><td>53.81%</td></tr><tr><td>購買免遊2</td><td>7</td><td>4.5</td><td>103,636</td><td>88,547</td><td>85.44%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 吉利卡蛙 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>13</td><td>1.9</td><td>54,727</td><td>29,446</td><td>53.81%</td></tr><tr><td>購買免遊2</td><td>7</td><td>4.5</td><td>103,636</td><td>88,547</td><td>85.44%</td></tr></tbody></table></div><div class="game-section" data-game="FuFrogKing"><div class="game-title">💎 吉利卡蛙 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_8"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_8"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>4</td><td>0.3</td><td>8,000</td><td>5,652</td><td>70.66%</td></tr><tr><td>購買免遊2</td><td>11</td><td>1.2</td><td>162,181</td><td>175,334</td><td>108.11%</td></tr><tr><td>購買免遊3</td><td>26</td><td>8.0</td><td>694,181</td><td>690,888</td><td>99.53%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 風暴賽特 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>4</td><td>0.3</td><td>8,000</td><td>5,652</td><td>70.66%</td></tr><tr><td>購買免遊2</td><td>11</td><td>1.2</td><td>162,181</td><td>175,334</td><td>108.11%</td></tr><tr><td>購買免遊3</td><td>26</td><td>8.0</td><td>694,181</td><td>690,888</td><td>99.53%</td></tr></tbody></table></div><div class="game-section" data-game="StormOfSeth"><div class="game-title">💎 風暴賽特 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_9"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_9"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>72</td><td>36.4</td><td>2,019,636</td><td>1,992,755</td><td>98.67%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 餘燼之刃 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>72</td><td>36.4</td><td>2,019,636</td><td>1,992,755</td><td>98.67%</td></tr></tbody></table></div><div class="game-section" data-game="EmberBlade"><div class="game-title">💎 餘燼之刃 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_10"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_10"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>143</td><td>27.8</td><td>7,242,727</td><td>6,052,511</td><td>83.57%</td></tr><tr><td>購買免遊2</td><td>152</td><td>22.4</td><td>7,578,181</td><td>5,948,341</td><td>78.49%</td></tr><tr><td>購買免遊3</td><td>261</td><td>87.6</td><td>5,477,818</td><td>5,675,934</td><td>103.62%</td></tr><tr><td>購買免遊4</td><td>227</td><td>85.7</td><td>2,762,181</td><td>1,768,011</td><td>64.01%</td></tr><tr><td>購買免遊5</td><td>370</td><td>1567.1</td><td>12,561,145</td><td>12,245,369</td><td>97.49%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 仙界傳說 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>143</td><td>27.8</td><td>7,242,727</td><td>6,052,511</td><td>83.57%</td></tr><tr><td>購買免遊2</td><td>152</td><td>22.4</td><td>7,578,181</td><td>5,948,341</td><td>78.49%</td></tr><tr><td>購買免遊3</td><td>261</td><td>87.6</td><td>5,477,818</td><td>5,675,934</td><td>103.62%</td></tr><tr><td>購買免遊4</td><td>227</td><td>85.7</td><td>2,762,181</td><td>1,768,011</td><td>64.01%</td></tr><tr><td>購買免遊5</td><td>370</td><td>1567.1</td><td>12,561,145</td><td>12,245,369</td><td>97.49%</td></tr></tbody></table></div><div class="game-section" data-game="ROSlot"><div class="game-title">💎 仙界傳說 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_11"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_11"></canvas></div>
@@ -619,7 +639,7 @@ th { background: var(--header-bg); font-weight: bold; }
 <li><strong>核心高黏著遊戲指標</strong>：戰神呂布 (TKLuBu) 與火燒赤壁 (RedCliffFire) 展現了極其強悍且平穩的每日留存率，其 D1 留存維持在 30%-55% 高檔，D3 與 D7 亦有極佳的厚度，是數值模型最成功的典範。</li>
 <li><strong>長線生態監控</strong>：次日 (D1) 反映玩家首日體驗，三日 (D3) 與七日 (D7) 反映長線黏著。當單日留存率出現階梯式下滑時，應結合該日大盤 RTP 走勢，評估是否因特定大獎觸發不足或獲利回吐過快導致玩家流失。</li></ul></div>
 </div>
-<div class="game-section"><div class="game-title">📈 辣椒圓舞曲2 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
+<div class="game-section" data-game="ChilliSlot2"><div class="game-title">📈 辣椒圓舞曲2 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
 <div style="margin-bottom: 10px; font-weight: 700; font-size: 1.1rem; color: #64748b; background-color: #f1f5f9; padding: 6px 12px; border-radius: 6px; display: inline-block;">
   ⏮️ 舊版留存走勢 (2026-04-09 ~ 2026-05-05)
 </div>
@@ -656,7 +676,7 @@ th { background: var(--header-bg); font-weight: bold; }
   </div>
 </div>
 
-<div class="conclusion-box"><h4>📋 辣椒圓舞曲2 每日留存走勢營運小結</h4><p>每日大盤留存走勢表現強勁且極為穩定，次日留存均值站穩 35% 以上，三日與七日留存衰退斜率平緩，顯示改版數值極具核心玩家吸引力。</p></div></div><div class="game-section"><div class="game-title">📈 雷霆之錘2 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
+<div class="conclusion-box"><h4>📋 辣椒圓舞曲2 每日留存走勢營運小結</h4><p>每日大盤留存走勢表現強勁且極為穩定，次日留存均值站穩 35% 以上，三日與七日留存衰退斜率平緩，顯示改版數值極具核心玩家吸引力。</p></div></div><div class="game-section" data-game="PowerOfThunder2"><div class="game-title">📈 雷霆之錘2 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
 <div style="margin-bottom: 10px; font-weight: 700; font-size: 1.1rem; color: #64748b; background-color: #f1f5f9; padding: 6px 12px; border-radius: 6px; display: inline-block;">
   ⏮️ 舊版留存走勢 (2026-04-09 ~ 2026-05-05)
 </div>
@@ -693,7 +713,7 @@ th { background: var(--header-bg); font-weight: bold; }
   </div>
 </div>
 
-<div class="conclusion-box"><h4>📋 雷霆之錘2 每日留存走勢營運小結</h4><p>大盤每日玩家留存極具黏著厚度，D1 次日留存高達 25%-35%，D3 與 D7 的平台期長，配合人均超深局數，每日玩家黏著動能極為充沛。</p></div></div><div class="game-section"><div class="game-title">📈 火燒赤壁 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
+<div class="conclusion-box"><h4>📋 雷霆之錘2 每日留存走勢營運小結</h4><p>大盤每日玩家留存極具黏著厚度，D1 次日留存高達 25%-35%，D3 與 D7 的平台期長，配合人均超深局數，每日玩家黏著動能極為充沛。</p></div></div><div class="game-section" data-game="RedCliffFire"><div class="game-title">📈 火燒赤壁 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
 <div style="margin-bottom: 10px; font-weight: 700; font-size: 1.1rem; color: #64748b; background-color: #f1f5f9; padding: 6px 12px; border-radius: 6px; display: inline-block;">
   ⏮️ 舊版留存走勢 (2026-04-09 ~ 2026-05-05)
 </div>
@@ -730,7 +750,7 @@ th { background: var(--header-bg); font-weight: bold; }
   </div>
 </div>
 
-<div class="conclusion-box"><h4>📋 火燒赤壁 每日留存走勢營運小結</h4><p>每日留存表現卓越，大盤次日留存高達 35%-50% 區間，三日與七日走勢極具厚度，中堅玩家黏著度高，改版數值吸引力強。</p></div></div><div class="game-section"><div class="game-title">📈 英雄羅賓漢 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
+<div class="conclusion-box"><h4>📋 火燒赤壁 每日留存走勢營運小結</h4><p>每日留存表現卓越，大盤次日留存高達 35%-50% 區間，三日與七日走勢極具厚度，中堅玩家黏著度高，改版數值吸引力強。</p></div></div><div class="game-section" data-game="RobinHood"><div class="game-title">📈 英雄羅賓漢 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
 <div style="margin-bottom: 10px; font-weight: 700; font-size: 1.1rem; color: #64748b; background-color: #f1f5f9; padding: 6px 12px; border-radius: 6px; display: inline-block;">
   ⏮️ 舊版留存走勢 (2026-04-09 ~ 2026-05-05)
 </div>
@@ -767,7 +787,7 @@ th { background: var(--header-bg); font-weight: bold; }
   </div>
 </div>
 
-<div class="conclusion-box"><h4>📋 英雄羅賓漢 每日留存走勢營運小結</h4><p>每日留存水準穩定在 15%-25% 區間，雖 RTP 反饋有波動，但每日活躍與留存走勢平穩，建議適度提升 RTP 以利每日大戶長線沉澱。</p></div></div><div class="game-section"><div class="game-title">📈 風暴賽特2 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
+<div class="conclusion-box"><h4>📋 英雄羅賓漢 每日留存走勢營運小結</h4><p>每日留存水準穩定在 15%-25% 區間，雖 RTP 反饋有波動，但每日活躍與留存走勢平穩，建議適度提升 RTP 以利每日大戶長線沉澱。</p></div></div><div class="game-section" data-game="StormOfSeth2"><div class="game-title">📈 風暴賽特2 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
 <div style="margin-bottom: 10px; font-weight: 700; font-size: 1.1rem; color: #64748b; background-color: #f1f5f9; padding: 6px 12px; border-radius: 6px; display: inline-block;">
   ⏮️ 舊版留存走勢 (2026-04-09 ~ 2026-05-05)
 </div>
@@ -804,7 +824,7 @@ th { background: var(--header-bg); font-weight: bold; }
   </div>
 </div>
 
-<div class="conclusion-box"><h4>📋 風暴賽特2 每日留存走勢營運小結</h4><p>每日留存走勢穩健，中 Bet 與大戶留存互補性強，帶動每日大盤 D3 及 D7 留存率維持高水準，大盤整體生態非常健康。</p></div></div><div class="game-section"><div class="game-title">📈 戰神呂布 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
+<div class="conclusion-box"><h4>📋 風暴賽特2 每日留存走勢營運小結</h4><p>每日留存走勢穩健，中 Bet 與大戶留存互補性強，帶動每日大盤 D3 及 D7 留存率維持高水準，大盤整體生態非常健康。</p></div></div><div class="game-section" data-game="TKLuBu"><div class="game-title">📈 戰神呂布 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
 <div style="margin-bottom: 10px; font-weight: 700; font-size: 1.1rem; color: #64748b; background-color: #f1f5f9; padding: 6px 12px; border-radius: 6px; display: inline-block;">
   ⏮️ 舊版留存走勢 (2026-04-09 ~ 2026-05-05)
 </div>
@@ -841,7 +861,7 @@ th { background: var(--header-bg); font-weight: bold; }
   </div>
 </div>
 
-<div class="conclusion-box"><h4>📋 戰神呂布 每日留存走勢營運小結</h4><p>每日次日留存穩定居於 25%-35% 高檔，且三日與七日留存衰退曲線極為平緩，反映改版數值對大戶及普通玩家均具備極強的忠誠度沉澱效果。</p></div></div><div class="game-section"><div class="game-title">📈 魔龍狂怒 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
+<div class="conclusion-box"><h4>📋 戰神呂布 每日留存走勢營運小結</h4><p>每日次日留存穩定居於 25%-35% 高檔，且三日與七日留存衰退曲線極為平緩，反映改版數值對大戶及普通玩家均具備極強的忠誠度沉澱效果。</p></div></div><div class="game-section" data-game="AngryDragon"><div class="game-title">📈 魔龍狂怒 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
 <div style="margin-bottom: 10px; font-weight: 700; font-size: 1.1rem; color: #64748b; background-color: #f1f5f9; padding: 6px 12px; border-radius: 6px; display: inline-block;">
   ⏮️ 舊版留存走勢 (2026-04-09 ~ 2026-05-05)
 </div>
@@ -878,7 +898,7 @@ th { background: var(--header-bg); font-weight: bold; }
   </div>
 </div>
 
-<div class="conclusion-box"><h4>📋 魔龍狂怒 每日留存走勢營運小結</h4><p>每日留存走勢平穩，次日留存率維持在 20%-30% 區間，大盤 RTP 與每日活躍局數運作正常，長線生態保持良好。</p></div></div><div class="game-section"><div class="game-title">📈 辣椒圓舞曲 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
+<div class="conclusion-box"><h4>📋 魔龍狂怒 每日留存走勢營運小結</h4><p>每日留存走勢平穩，次日留存率維持在 20%-30% 區間，大盤 RTP 與每日活躍局數運作正常，長線生態保持良好。</p></div></div><div class="game-section" data-game="ChilliSlot"><div class="game-title">📈 辣椒圓舞曲 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
 <div style="margin-bottom: 10px; font-weight: 700; font-size: 1.1rem; color: #64748b; background-color: #f1f5f9; padding: 6px 12px; border-radius: 6px; display: inline-block;">
   ⏮️ 舊版留存走勢 (2026-04-09 ~ 2026-05-05)
 </div>
@@ -915,7 +935,7 @@ th { background: var(--header-bg); font-weight: bold; }
   </div>
 </div>
 
-<div class="conclusion-box"><h4>📋 辣椒圓舞曲 每日留存走勢營運小結</h4><p>大盤每日留存表現穩定，D3 與 D7 收斂於合理水位。大獎反饋與留存呈現良好的正向關係，核心生態十分健全。</p></div></div><div class="game-section"><div class="game-title">📈 吉利卡蛙 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
+<div class="conclusion-box"><h4>📋 辣椒圓舞曲 每日留存走勢營運小結</h4><p>大盤每日留存表現穩定，D3 與 D7 收斂於合理水位。大獎反饋與留存呈現良好的正向關係，核心生態十分健全。</p></div></div><div class="game-section" data-game="FuFrogKing"><div class="game-title">📈 吉利卡蛙 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
 <div style="margin-bottom: 10px; font-weight: 700; font-size: 1.1rem; color: #64748b; background-color: #f1f5f9; padding: 6px 12px; border-radius: 6px; display: inline-block;">
   ⏮️ 舊版留存走勢 (2026-04-09 ~ 2026-05-05)
 </div>
@@ -952,7 +972,7 @@ th { background: var(--header-bg); font-weight: bold; }
   </div>
 </div>
 
-<div class="conclusion-box"><h4>📋 吉利卡蛙 每日留存走勢營運小結</h4><p>每日大盤留存走勢穩健，次日留存站穩 20%-30%，三日與七日留存有平台期支撐，大盤數值吸附力良好。</p></div></div><div class="game-section"><div class="game-title">📈 風暴賽特 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
+<div class="conclusion-box"><h4>📋 吉利卡蛙 每日留存走勢營運小結</h4><p>每日大盤留存走勢穩健，次日留存站穩 20%-30%，三日與七日留存有平台期支撐，大盤數值吸附力良好。</p></div></div><div class="game-section" data-game="StormOfSeth"><div class="game-title">📈 風暴賽特 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
 <div style="margin-bottom: 10px; font-weight: 700; font-size: 1.1rem; color: #64748b; background-color: #f1f5f9; padding: 6px 12px; border-radius: 6px; display: inline-block;">
   ⏮️ 舊版留存走勢 (2026-04-09 ~ 2026-05-05)
 </div>
@@ -989,7 +1009,7 @@ th { background: var(--header-bg); font-weight: bold; }
   </div>
 </div>
 
-<div class="conclusion-box"><h4>📋 風暴賽特 每日留存走勢營運小結</h4><p>每日留存與活躍局數運作平穩，大盤 RTP 處於健康區間，目前各BET區間人數與大獎反饋頻率運作穩定。</p></div></div><div class="game-section"><div class="game-title">📈 餘燼之刃 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
+<div class="conclusion-box"><h4>📋 風暴賽特 每日留存走勢營運小結</h4><p>每日留存與活躍局數運作平穩，大盤 RTP 處於健康區間，目前各BET區間人數與大獎反饋頻率運作穩定。</p></div></div><div class="game-section" data-game="EmberBlade"><div class="game-title">📈 餘燼之刃 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
 <div style="margin-bottom: 10px; font-weight: 700; font-size: 1.1rem; color: #64748b; background-color: #f1f5f9; padding: 6px 12px; border-radius: 6px; display: inline-block;">
   ⏮️ 舊版留存走勢 (2026-04-09 ~ 2026-05-05)
 </div>
@@ -1026,7 +1046,7 @@ th { background: var(--header-bg); font-weight: bold; }
   </div>
 </div>
 
-<div class="conclusion-box"><h4>📋 餘燼之刃 每日留存走勢營運小結</h4><p>由於新上線累積資料天數較短，三日與七日留存正在資料填充期。目前次日留存表現穩定，建議持續追蹤後續收斂趨勢。</p></div></div><div class="game-section"><div class="game-title">📈 黃金帝國2 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
+<div class="conclusion-box"><h4>📋 餘燼之刃 每日留存走勢營運小結</h4><p>由於新上線累積資料天數較短，三日與七日留存正在資料填充期。目前次日留存表現穩定，建議持續追蹤後續收斂趨勢。</p></div></div><div class="game-section" data-game="GoldEmpire2"><div class="game-title">📈 黃金帝國2 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
 <div style="margin-bottom: 10px; font-weight: 700; font-size: 1.1rem; color: #64748b; background-color: #f1f5f9; padding: 6px 12px; border-radius: 6px; display: inline-block;">
   ⏮️ 舊版留存走勢 (2026-04-09 ~ 2026-05-05)
 </div>
@@ -1063,7 +1083,7 @@ th { background: var(--header-bg); font-weight: bold; }
   </div>
 </div>
 
-<div class="conclusion-box"><h4>📋 黃金帝國2 每日留存走勢營運小結</h4><p>每日次日留存高達 25%-30% 以上，三日與七日留存走勢優質，大戶人均總局數長線深厚，市場改版反響極佳。</p></div></div><div class="game-section"><div class="game-title">📈 仙界傳說 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
+<div class="conclusion-box"><h4>📋 黃金帝國2 每日留存走勢營運小結</h4><p>每日次日留存高達 25%-30% 以上，三日與七日留存走勢優質，大戶人均總局數長線深厚，市場改版反響極佳。</p></div></div><div class="game-section" data-game="ROSlot"><div class="game-title">📈 仙界傳說 每日留存走勢 (依 BET 區間 - 舊版 vs 新版對比)</div>
 <div style="margin-bottom: 10px; font-weight: 700; font-size: 1.1rem; color: #64748b; background-color: #f1f5f9; padding: 6px 12px; border-radius: 6px; display: inline-block;">
   ⏮️ 舊版留存走勢 (2026-04-09 ~ 2026-05-05)
 </div>
@@ -1109,91 +1129,91 @@ th { background: var(--header-bg); font-weight: bold; }
 <li><strong>RTP 穩定度</strong>：觀察紅線 (5000+) 與黃線 (500-4999) 的 RTP 是否在合理範圍內震盪。若單日高於 150%，代表該日有核心大戶觸發巨額大獎。</li>
 <li><strong>熱度衰退斜率</strong>：觀察各區間每日活躍局數與 DAU 走勢。平穩或微幅上升代表玩家體驗良好；若呈現斷崖式下跌，代表存在玩家流失問題。</li></ul></div>
 </div>
-<div class="game-section"><div class="game-title">📈 辣椒圓舞曲2 每日走勢</div>
+<div class="game-section" data-game="ChilliSlot2"><div class="game-title">📈 辣椒圓舞曲2 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_0"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_0"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_0"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 雷霆之錘2 每日走勢</div>
+</div></div><div class="game-section" data-game="PowerOfThunder2"><div class="game-title">📈 雷霆之錘2 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_1"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_1"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_1"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 火燒赤壁 每日走勢</div>
+</div></div><div class="game-section" data-game="RedCliffFire"><div class="game-title">📈 火燒赤壁 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_2"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_2"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_2"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 英雄羅賓漢 每日走勢</div>
+</div></div><div class="game-section" data-game="RobinHood"><div class="game-title">📈 英雄羅賓漢 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_3"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_3"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_3"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 風暴賽特2 每日走勢</div>
+</div></div><div class="game-section" data-game="StormOfSeth2"><div class="game-title">📈 風暴賽特2 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_4"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_4"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_4"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 戰神呂布 每日走勢</div>
+</div></div><div class="game-section" data-game="TKLuBu"><div class="game-title">📈 戰神呂布 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_5"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_5"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_5"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 魔龍狂怒 每日走勢</div>
+</div></div><div class="game-section" data-game="AngryDragon"><div class="game-title">📈 魔龍狂怒 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_6"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_6"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_6"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 辣椒圓舞曲 每日走勢</div>
+</div></div><div class="game-section" data-game="ChilliSlot"><div class="game-title">📈 辣椒圓舞曲 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_7"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_7"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_7"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 吉利卡蛙 每日走勢</div>
+</div></div><div class="game-section" data-game="FuFrogKing"><div class="game-title">📈 吉利卡蛙 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_8"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_8"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_8"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 風暴賽特 每日走勢</div>
+</div></div><div class="game-section" data-game="StormOfSeth"><div class="game-title">📈 風暴賽特 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_9"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_9"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_9"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 餘燼之刃 每日走勢</div>
+</div></div><div class="game-section" data-game="EmberBlade"><div class="game-title">📈 餘燼之刃 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_10"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_10"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_10"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 黃金帝國2 每日走勢</div>
+</div></div><div class="game-section" data-game="GoldEmpire2"><div class="game-title">📈 黃金帝國2 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_11"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_11"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_11"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 仙界傳說 每日走勢</div>
+</div></div><div class="game-section" data-game="ROSlot"><div class="game-title">📈 仙界傳說 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_12"></canvas></div>
 </div>
@@ -1221,6 +1241,21 @@ function openTab(tabName) {
             }
         });
     }
+}
+
+function filterGame(gameKey) {
+    document.querySelectorAll('.game-section').forEach(sec => {
+        if (gameKey === 'all') {
+            sec.style.display = 'block';
+        } else {
+            const secGame = sec.getAttribute('data-game');
+            if (secGame === gameKey) {
+                sec.style.display = 'block';
+            } else {
+                sec.style.display = 'none';
+            }
+        }
+    });
 }
 
 const pOps = { responsive: true, maintainAspectRatio: false, plugins: { datalabels: { anchor: 'end', align: 'top', font: { weight: 'bold', size: 9 } } } };
