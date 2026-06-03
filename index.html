@@ -38,6 +38,27 @@ th { background: var(--header-bg); font-weight: bold; }
 <button class="tab-btn" onclick="openTab('trend')" style="background-color: #fef08a; color: #854d0e;">📈 趨勢走勢 (新)</button>
 </div>
 
+<div style="text-align: center; margin-bottom: 25px;">
+  <label for="global-game-select" style="font-weight: bold; font-size: 1.1rem; margin-right: 10px;">🎯 選擇遊戲篩選：</label>
+  <select id="global-game-select" onchange="filterGame(this.value)" style="padding: 10px 20px; font-size: 1.1rem; border-radius: 8px; border: 1px solid var(--border); background-color: var(--card-bg); font-weight: bold; color: var(--accent); cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+    <option value="all">顯示全部遊戲</option>
+    <option value="ChilliSlot2">辣椒圓舞曲2</option>
+    <option value="PowerOfThunder2">雷霆之錘2</option>
+    <option value="RedCliffFire">火燒赤壁</option>
+    <option value="RobinHood">英雄羅賓漢</option>
+    <option value="StormOfSeth2">風暴賽特2</option>
+    <option value="TKLuBu">戰神呂布</option>
+    <option value="AngryDragon">魔龍狂怒</option>
+    <option value="ChilliSlot">辣椒圓舞曲</option>
+    <option value="FuFrogKing">吉利卡蛙</option>
+    <option value="StormOfSeth">風暴賽特</option>
+    <option value="EmberBlade">餘燼之刃</option>
+    <option value="GoldEmpire2">黃金帝國2</option>
+    <option value="ROSlot">仙界傳說</option>
+
+  </select>
+</div>
+
 <div id="performance" class="tab-content active">
 <div class="dashboard-section">
 <div class="dashboard-card" style="border-top-color: #059669;"><h3>✨ 06-03 成效數據亮點</h3><ul>
@@ -53,7 +74,7 @@ th { background: var(--header-bg); font-weight: bold; }
 <div class="dashboard-card" style="border-top-color: #3b82f6;"><h3>🎯 核心成效總結</h3>
 <p style="font-size: 0.9rem;">綜合最新數據來看，本次改版在<b>中堅玩家留存提升</b>（如辣椒2、賽特2、赤壁）以及<b>修正高額倒貼 RTP</b>（如蛙、仙界）上取得了明顯進展。但同時也面臨<b>部分遊戲活躍人數萎縮</b>（如呂布、雷霆2）、<b>中高階 RTP 偏高壓縮利潤</b>（如黃金2、餘燼、仙界中階），以及<b>部分區間過低 RTP 導致大戶流失</b>（如羅賓漢）等挑戰。後續營運應針對不同遊戲的 RTP 溢出或過低進行精準調校，以平衡玩家體驗與平台收益。</p></div>
 </div>
-<div class="game-section"><div class="game-title">辣椒圓舞曲2</div>
+<div class="game-section" data-game="ChilliSlot2"><div class="game-title">辣椒圓舞曲2</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="p_dau_0"></canvas></div>
 <div class="chart-container"><canvas id="p_rtp_0"></canvas></div>
@@ -67,7 +88,7 @@ th { background: var(--header-bg); font-weight: bold; }
 <th rowspan="2" class="retention-col">三日留存 (D+2)</th></tr>
 <tr><th>期間總人數</th><th>日均局數</th><th>人均局數</th><th>總RTP</th>
 <th>500-999倍</th><th>1000-1999倍</th><th>2000倍+</th></tr>
-</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>3,109</td><td>204,586</td><td>229</td><td>98.03%</td><td>9</td><td>1</td><td>0</td><td>1.8</td><td class="retention-col">10.2%</td></tr><tr class="new-row"><td>新版</td><td>4,845</td><td>106,368</td><td>236</td><td>96.75%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">16.9%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>1,816</td><td>236,760</td><td>238</td><td>98.01%</td><td>12</td><td>0</td><td>0</td><td>2.2</td><td class="retention-col">14.0%</td></tr><tr class="new-row"><td>新版</td><td>2,511</td><td>88,314</td><td>309</td><td>95.48%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">38.2%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>369</td><td>38,916</td><td>412</td><td>99.74%</td><td>2</td><td>0</td><td>0</td><td>0.4</td><td class="retention-col">10.1%</td></tr><tr class="new-row"><td>新版</td><td>440</td><td>15,346</td><td>440</td><td>99.13%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">17.4%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 辣椒圓舞曲2 分析小結</h4><p>優點：中階投注（500-4999）的三日留存率從 14.0% 提升到 38.2%，各區間玩家活躍人數均呈現雙位數以上增長。缺點：大戶 RTP 依然高達 99.1%，營運獲利空間非常小。</p></div></div><div class="game-section"><div class="game-title">雷霆之錘2</div>
+</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>3,109</td><td>204,586</td><td>229</td><td>98.03%</td><td>9</td><td>1</td><td>0</td><td>1.8</td><td class="retention-col">10.2%</td></tr><tr class="new-row"><td>新版</td><td>4,845</td><td>106,368</td><td>236</td><td>96.75%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">16.9%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>1,816</td><td>236,760</td><td>238</td><td>98.01%</td><td>12</td><td>0</td><td>0</td><td>2.2</td><td class="retention-col">14.0%</td></tr><tr class="new-row"><td>新版</td><td>2,511</td><td>88,314</td><td>309</td><td>95.48%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">38.2%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>369</td><td>38,916</td><td>412</td><td>99.74%</td><td>2</td><td>0</td><td>0</td><td>0.4</td><td class="retention-col">10.1%</td></tr><tr class="new-row"><td>新版</td><td>440</td><td>15,346</td><td>440</td><td>99.13%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">17.4%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 辣椒圓舞曲2 分析小結</h4><p>優點：中階投注（500-4999）的三日留存率從 14.0% 提升到 38.2%，各區間玩家活躍人數均呈現雙位數以上增長。缺點：大戶 RTP 依然高達 99.1%，營運獲利空間非常小。</p></div></div><div class="game-section" data-game="PowerOfThunder2"><div class="game-title">雷霆之錘2</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="p_dau_1"></canvas></div>
 <div class="chart-container"><canvas id="p_rtp_1"></canvas></div>
@@ -81,7 +102,7 @@ th { background: var(--header-bg); font-weight: bold; }
 <th rowspan="2" class="retention-col">三日留存 (D+2)</th></tr>
 <tr><th>期間總人數</th><th>日均局數</th><th>人均局數</th><th>總RTP</th>
 <th>500-999倍</th><th>1000-1999倍</th><th>2000倍+</th></tr>
-</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>4,493</td><td>737,479</td><td>241</td><td>98.28%</td><td>171</td><td>7</td><td>5</td><td>33.3</td><td class="retention-col">19.1%</td></tr><tr class="new-row"><td>新版</td><td>4,035</td><td>100,040</td><td>293</td><td>97.00%</td><td>128</td><td>10</td><td>1</td><td>5.1</td><td class="retention-col">18.3%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>2,706</td><td>815,022</td><td>394</td><td>97.28%</td><td>156</td><td>21</td><td>6</td><td>33.3</td><td class="retention-col">49.2%</td></tr><tr class="new-row"><td>新版</td><td>2,176</td><td>90,907</td><td>366</td><td>97.54%</td><td>125</td><td>14</td><td>1</td><td>5.1</td><td class="retention-col">31.5%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>672</td><td>176,551</td><td>460</td><td>96.31%</td><td>50</td><td>3</td><td>3</td><td>10.2</td><td class="retention-col">22.6%</td></tr><tr class="new-row"><td>新版</td><td>397</td><td>18,947</td><td>505</td><td>98.83%</td><td>31</td><td>1</td><td>2</td><td>1.2</td><td class="retention-col">23.3%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 雷霆之錘2 分析小結</h4><p>優點：大戶次日與三日留存分別為 32.5% 與 23.3%，維持微幅成長，且大戶 RTP 為 98.8% 控制在合理區間。缺點：中階投注（500-4999）次日、三日與七日留存率相較舊版出現大幅度下滑，且各押注區間的活躍人數皆有減少。</p></div></div><div class="game-section"><div class="game-title">火燒赤壁</div>
+</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>4,493</td><td>737,479</td><td>241</td><td>98.28%</td><td>171</td><td>7</td><td>5</td><td>33.3</td><td class="retention-col">19.1%</td></tr><tr class="new-row"><td>新版</td><td>4,035</td><td>100,040</td><td>293</td><td>97.00%</td><td>128</td><td>10</td><td>1</td><td>5.1</td><td class="retention-col">18.3%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>2,706</td><td>815,022</td><td>394</td><td>97.28%</td><td>156</td><td>21</td><td>6</td><td>33.3</td><td class="retention-col">49.2%</td></tr><tr class="new-row"><td>新版</td><td>2,176</td><td>90,907</td><td>366</td><td>97.54%</td><td>125</td><td>14</td><td>1</td><td>5.1</td><td class="retention-col">31.5%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>672</td><td>176,551</td><td>460</td><td>96.31%</td><td>50</td><td>3</td><td>3</td><td>10.2</td><td class="retention-col">22.6%</td></tr><tr class="new-row"><td>新版</td><td>397</td><td>18,947</td><td>505</td><td>98.83%</td><td>31</td><td>1</td><td>2</td><td>1.2</td><td class="retention-col">23.3%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 雷霆之錘2 分析小結</h4><p>優點：大戶次日與三日留存分別為 32.5% 與 23.3%，維持微幅成長，且大戶 RTP 為 98.8% 控制在合理區間。缺點：中階投注（500-4999）次日、三日與七日留存率相較舊版出現大幅度下滑，且各押注區間的活躍人數皆有減少。</p></div></div><div class="game-section" data-game="RedCliffFire"><div class="game-title">火燒赤壁</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="p_dau_2"></canvas></div>
 <div class="chart-container"><canvas id="p_rtp_2"></canvas></div>
@@ -95,7 +116,7 @@ th { background: var(--header-bg); font-weight: bold; }
 <th rowspan="2" class="retention-col">三日留存 (D+2)</th></tr>
 <tr><th>期間總人數</th><th>日均局數</th><th>人均局數</th><th>總RTP</th>
 <th>500-999倍</th><th>1000-1999倍</th><th>2000倍+</th></tr>
-</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>1,015</td><td>179,784</td><td>258</td><td>97.79%</td><td>12</td><td>8</td><td>1</td><td>3.8</td><td class="retention-col">36.8%</td></tr><tr class="new-row"><td>新版</td><td>1,132</td><td>35,147</td><td>273</td><td>96.31%</td><td>9</td><td>7</td><td>0</td><td>0.6</td><td class="retention-col">33.3%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>812</td><td>142,136</td><td>258</td><td>96.41%</td><td>5</td><td>3</td><td>0</td><td>1.5</td><td class="retention-col">18.0%</td></tr><tr class="new-row"><td>新版</td><td>1,090</td><td>27,230</td><td>270</td><td>94.85%</td><td>5</td><td>0</td><td>1</td><td>0.2</td><td class="retention-col">50.5%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>194</td><td>46,983</td><td>587</td><td>93.90%</td><td>1</td><td>0</td><td>0</td><td>0.2</td><td class="retention-col">17.1%</td></tr><tr class="new-row"><td>新版</td><td>152</td><td>5,893</td><td>457</td><td>98.32%</td><td>4</td><td>1</td><td>0</td><td>0.2</td><td class="retention-col">20.7%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 火燒赤壁 分析小結</h4><p>優點：中階投注（500-4999）的三日留存率從 18.0% 大幅成長至 50.5%，七日留存升至 25.8%，中階玩家黏性極強。缺點：大戶玩家人數有所減少，大戶 RTP 升至 98.3% 略微偏高。</p></div></div><div class="game-section"><div class="game-title">英雄羅賓漢</div>
+</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>1,015</td><td>179,784</td><td>258</td><td>97.79%</td><td>12</td><td>8</td><td>1</td><td>3.8</td><td class="retention-col">36.8%</td></tr><tr class="new-row"><td>新版</td><td>1,132</td><td>35,147</td><td>273</td><td>96.31%</td><td>9</td><td>7</td><td>0</td><td>0.6</td><td class="retention-col">33.3%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>812</td><td>142,136</td><td>258</td><td>96.41%</td><td>5</td><td>3</td><td>0</td><td>1.5</td><td class="retention-col">18.0%</td></tr><tr class="new-row"><td>新版</td><td>1,090</td><td>27,230</td><td>270</td><td>94.85%</td><td>5</td><td>0</td><td>1</td><td>0.2</td><td class="retention-col">50.5%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>194</td><td>46,983</td><td>587</td><td>93.90%</td><td>1</td><td>0</td><td>0</td><td>0.2</td><td class="retention-col">17.1%</td></tr><tr class="new-row"><td>新版</td><td>152</td><td>5,893</td><td>457</td><td>98.32%</td><td>4</td><td>1</td><td>0</td><td>0.2</td><td class="retention-col">20.7%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 火燒赤壁 分析小結</h4><p>優點：中階投注（500-4999）的三日留存率從 18.0% 大幅成長至 50.5%，七日留存升至 25.8%，中階玩家黏性極強。缺點：大戶玩家人數有所減少，大戶 RTP 升至 98.3% 略微偏高。</p></div></div><div class="game-section" data-game="RobinHood"><div class="game-title">英雄羅賓漢</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="p_dau_3"></canvas></div>
 <div class="chart-container"><canvas id="p_rtp_3"></canvas></div>
@@ -109,7 +130,7 @@ th { background: var(--header-bg); font-weight: bold; }
 <th rowspan="2" class="retention-col">三日留存 (D+2)</th></tr>
 <tr><th>期間總人數</th><th>日均局數</th><th>人均局數</th><th>總RTP</th>
 <th>500-999倍</th><th>1000-1999倍</th><th>2000倍+</th></tr>
-</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>685</td><td>39,405</td><td>109</td><td>94.28%</td><td>3</td><td>0</td><td>0</td><td>0.5</td><td class="retention-col">22.5%</td></tr><tr class="new-row"><td>新版</td><td>755</td><td>7,081</td><td>114</td><td>97.61%</td><td>1</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">17.5%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>413</td><td>47,986</td><td>265</td><td>96.20%</td><td>2</td><td>0</td><td>0</td><td>0.4</td><td class="retention-col">23.1%</td></tr><tr class="new-row"><td>新版</td><td>361</td><td>5,885</td><td>218</td><td>95.91%</td><td>1</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">29.0%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>98</td><td>6,307</td><td>165</td><td>90.44%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">3.0%</td></tr><tr class="new-row"><td>新版</td><td>70</td><td>768</td><td>212</td><td>89.58%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">7.4%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 英雄羅賓漢 分析小結</h4><p>優點：中階投注三日留存由舊版 23.1% 微幅升至 29.0%。缺點：大戶 RTP 僅 89.6% 偏低，導致大戶玩家流失嚴重（人數由 98 降至 70，三日留存僅 7.4%）。</p></div></div><div class="game-section"><div class="game-title">風暴賽特2</div>
+</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>685</td><td>39,405</td><td>109</td><td>94.28%</td><td>3</td><td>0</td><td>0</td><td>0.5</td><td class="retention-col">22.5%</td></tr><tr class="new-row"><td>新版</td><td>755</td><td>7,081</td><td>114</td><td>97.61%</td><td>1</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">17.5%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>413</td><td>47,986</td><td>265</td><td>96.20%</td><td>2</td><td>0</td><td>0</td><td>0.4</td><td class="retention-col">23.1%</td></tr><tr class="new-row"><td>新版</td><td>361</td><td>5,885</td><td>218</td><td>95.91%</td><td>1</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">29.0%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>98</td><td>6,307</td><td>165</td><td>90.44%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">3.0%</td></tr><tr class="new-row"><td>新版</td><td>70</td><td>768</td><td>212</td><td>89.58%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">7.4%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 英雄羅賓漢 分析小結</h4><p>優點：中階投注三日留存由舊版 23.1% 微幅升至 29.0%。缺點：大戶 RTP 僅 89.6% 偏低，導致大戶玩家流失嚴重（人數由 98 降至 70，三日留存僅 7.4%）。</p></div></div><div class="game-section" data-game="StormOfSeth2"><div class="game-title">風暴賽特2</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="p_dau_4"></canvas></div>
 <div class="chart-container"><canvas id="p_rtp_4"></canvas></div>
@@ -123,7 +144,7 @@ th { background: var(--header-bg); font-weight: bold; }
 <th rowspan="2" class="retention-col">三日留存 (D+2)</th></tr>
 <tr><th>期間總人數</th><th>日均局數</th><th>人均局數</th><th>總RTP</th>
 <th>500-999倍</th><th>1000-1999倍</th><th>2000倍+</th></tr>
-</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>2,227</td><td>447,571</td><td>275</td><td>97.56%</td><td>161</td><td>38</td><td>7</td><td>37.5</td><td class="retention-col">26.3%</td></tr><tr class="new-row"><td>新版</td><td>1,654</td><td>45,096</td><td>341</td><td>98.09%</td><td>38</td><td>11</td><td>4</td><td>1.9</td><td class="retention-col">24.1%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>1,780</td><td>477,762</td><td>346</td><td>96.39%</td><td>167</td><td>43</td><td>8</td><td>39.6</td><td class="retention-col">27.7%</td></tr><tr class="new-row"><td>新版</td><td>1,740</td><td>52,788</td><td>257</td><td>97.50%</td><td>133</td><td>41</td><td>12</td><td>6.8</td><td class="retention-col">47.8%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>391</td><td>126,977</td><td>619</td><td>100.22%</td><td>46</td><td>17</td><td>5</td><td>12.4</td><td class="retention-col">19.7%</td></tr><tr class="new-row"><td>新版</td><td>240</td><td>10,263</td><td>492</td><td>95.82%</td><td>19</td><td>5</td><td>1</td><td>0.9</td><td class="retention-col">22.1%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 風暴賽特2 分析小結</h4><p>優點：中階投注（500-4999）的三日留存率從舊版的 27.7% 大幅提升至 47.8%，大戶 RTP 降為 95.8% 緩解了倒貼的狀況。缺點：大戶與小額投注的活躍人數有明顯流失，小額投注的長線留存略有退步。</p></div></div><div class="game-section"><div class="game-title">戰神呂布</div>
+</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>2,227</td><td>447,571</td><td>275</td><td>97.56%</td><td>161</td><td>38</td><td>7</td><td>37.5</td><td class="retention-col">26.3%</td></tr><tr class="new-row"><td>新版</td><td>1,654</td><td>45,096</td><td>341</td><td>98.09%</td><td>38</td><td>11</td><td>4</td><td>1.9</td><td class="retention-col">24.1%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>1,780</td><td>477,762</td><td>346</td><td>96.39%</td><td>167</td><td>43</td><td>8</td><td>39.6</td><td class="retention-col">27.7%</td></tr><tr class="new-row"><td>新版</td><td>1,740</td><td>52,788</td><td>257</td><td>97.50%</td><td>133</td><td>41</td><td>12</td><td>6.8</td><td class="retention-col">47.8%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>391</td><td>126,977</td><td>619</td><td>100.22%</td><td>46</td><td>17</td><td>5</td><td>12.4</td><td class="retention-col">19.7%</td></tr><tr class="new-row"><td>新版</td><td>240</td><td>10,263</td><td>492</td><td>95.82%</td><td>19</td><td>5</td><td>1</td><td>0.9</td><td class="retention-col">22.1%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 風暴賽特2 分析小結</h4><p>優點：中階投注（500-4999）的三日留存率從舊版的 27.7% 大幅提升至 47.8%，大戶 RTP 降為 95.8% 緩解了倒貼的狀況。缺點：大戶與小額投注的活躍人數有明顯流失，小額投注的長線留存略有退步。</p></div></div><div class="game-section" data-game="TKLuBu"><div class="game-title">戰神呂布</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="p_dau_5"></canvas></div>
 <div class="chart-container"><canvas id="p_rtp_5"></canvas></div>
@@ -137,7 +158,7 @@ th { background: var(--header-bg); font-weight: bold; }
 <th rowspan="2" class="retention-col">三日留存 (D+2)</th></tr>
 <tr><th>期間總人數</th><th>日均局數</th><th>人均局數</th><th>總RTP</th>
 <th>500-999倍</th><th>1000-1999倍</th><th>2000倍+</th></tr>
-</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>3,072</td><td>256,276</td><td>212</td><td>96.78%</td><td>36</td><td>3</td><td>6</td><td>8.2</td><td class="retention-col">15.5%</td></tr><tr class="new-row"><td>新版</td><td>1,424</td><td>30,532</td><td>260</td><td>97.01%</td><td>15</td><td>2</td><td>0</td><td>0.6</td><td class="retention-col">21.0%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>1,468</td><td>290,405</td><td>424</td><td>94.67%</td><td>33</td><td>4</td><td>2</td><td>7.1</td><td class="retention-col">17.1%</td></tr><tr class="new-row"><td>新版</td><td>1,036</td><td>37,831</td><td>380</td><td>96.95%</td><td>28</td><td>4</td><td>1</td><td>1.2</td><td class="retention-col">33.0%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>350</td><td>65,444</td><td>384</td><td>95.68%</td><td>10</td><td>1</td><td>1</td><td>2.2</td><td class="retention-col">18.1%</td></tr><tr class="new-row"><td>新版</td><td>228</td><td>7,919</td><td>422</td><td>95.71%</td><td>7</td><td>0</td><td>0</td><td>0.3</td><td class="retention-col">18.8%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 戰神呂布 分析小結</h4><p>優點：各押注區間的留存表現均比舊版好，大戶次日、三日、七日留存分別為 29.1%、18.8% 與 11.0%，大戶 RTP 穩定在 95.7%。缺點：不論大戶、中階或小額投注，期間活躍玩家人數均出現顯著縮減。</p></div></div><div class="game-section"><div class="game-title">魔龍狂怒</div>
+</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>3,072</td><td>256,276</td><td>212</td><td>96.78%</td><td>36</td><td>3</td><td>6</td><td>8.2</td><td class="retention-col">15.5%</td></tr><tr class="new-row"><td>新版</td><td>1,424</td><td>30,532</td><td>260</td><td>97.01%</td><td>15</td><td>2</td><td>0</td><td>0.6</td><td class="retention-col">21.0%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>1,468</td><td>290,405</td><td>424</td><td>94.67%</td><td>33</td><td>4</td><td>2</td><td>7.1</td><td class="retention-col">17.1%</td></tr><tr class="new-row"><td>新版</td><td>1,036</td><td>37,831</td><td>380</td><td>96.95%</td><td>28</td><td>4</td><td>1</td><td>1.2</td><td class="retention-col">33.0%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>350</td><td>65,444</td><td>384</td><td>95.68%</td><td>10</td><td>1</td><td>1</td><td>2.2</td><td class="retention-col">18.1%</td></tr><tr class="new-row"><td>新版</td><td>228</td><td>7,919</td><td>422</td><td>95.71%</td><td>7</td><td>0</td><td>0</td><td>0.3</td><td class="retention-col">18.8%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 戰神呂布 分析小結</h4><p>優點：各押注區間的留存表現均比舊版好，大戶次日、三日、七日留存分別為 29.1%、18.8% 與 11.0%，大戶 RTP 穩定在 95.7%。缺點：不論大戶、中階或小額投注，期間活躍玩家人數均出現顯著縮減。</p></div></div><div class="game-section" data-game="AngryDragon"><div class="game-title">魔龍狂怒</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="p_dau_6"></canvas></div>
 <div class="chart-container"><canvas id="p_rtp_6"></canvas></div>
@@ -151,7 +172,7 @@ th { background: var(--header-bg); font-weight: bold; }
 <th rowspan="2" class="retention-col">三日留存 (D+2)</th></tr>
 <tr><th>期間總人數</th><th>日均局數</th><th>人均局數</th><th>總RTP</th>
 <th>500-999倍</th><th>1000-1999倍</th><th>2000倍+</th></tr>
-</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>299</td><td>31,168</td><td>182</td><td>97.64%</td><td>1</td><td>0</td><td>0</td><td>0.2</td><td class="retention-col">28.8%</td></tr><tr class="new-row"><td>新版</td><td>391</td><td>7,564</td><td>247</td><td>97.98%</td><td>8</td><td>1</td><td>1</td><td>0.4</td><td class="retention-col">24.8%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>263</td><td>33,455</td><td>341</td><td>98.08%</td><td>2</td><td>1</td><td>0</td><td>0.5</td><td class="retention-col">9.6%</td></tr><tr class="new-row"><td>新版</td><td>305</td><td>5,732</td><td>277</td><td>92.43%</td><td>0</td><td>1</td><td>0</td><td>0.0</td><td class="retention-col">17.4%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>78</td><td>7,503</td><td>243</td><td>86.94%</td><td>0</td><td>1</td><td>0</td><td>0.2</td><td class="retention-col">19.2%</td></tr><tr class="new-row"><td>新版</td><td>74</td><td>1,281</td><td>280</td><td>94.24%</td><td>1</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">11.2%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 魔龍狂怒 分析小結</h4><p>優點：大盤數值與 RTP 收斂在正常範圍。缺點：活躍玩家人數大幅萎縮，玩家群體老化，留存率亦偏低，產品進入生命週期尾聲。</p></div></div><div class="game-section"><div class="game-title">辣椒圓舞曲</div>
+</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>299</td><td>31,168</td><td>182</td><td>97.64%</td><td>1</td><td>0</td><td>0</td><td>0.2</td><td class="retention-col">28.8%</td></tr><tr class="new-row"><td>新版</td><td>391</td><td>7,564</td><td>247</td><td>97.98%</td><td>8</td><td>1</td><td>1</td><td>0.4</td><td class="retention-col">24.8%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>263</td><td>33,455</td><td>341</td><td>98.08%</td><td>2</td><td>1</td><td>0</td><td>0.5</td><td class="retention-col">9.6%</td></tr><tr class="new-row"><td>新版</td><td>305</td><td>5,732</td><td>277</td><td>92.43%</td><td>0</td><td>1</td><td>0</td><td>0.0</td><td class="retention-col">17.4%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>78</td><td>7,503</td><td>243</td><td>86.94%</td><td>0</td><td>1</td><td>0</td><td>0.2</td><td class="retention-col">19.2%</td></tr><tr class="new-row"><td>新版</td><td>74</td><td>1,281</td><td>280</td><td>94.24%</td><td>1</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">11.2%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 魔龍狂怒 分析小結</h4><p>優點：大盤數值與 RTP 收斂在正常範圍。缺點：活躍玩家人數大幅萎縮，玩家群體老化，留存率亦偏低，產品進入生命週期尾聲。</p></div></div><div class="game-section" data-game="ChilliSlot"><div class="game-title">辣椒圓舞曲</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="p_dau_7"></canvas></div>
 <div class="chart-container"><canvas id="p_rtp_7"></canvas></div>
@@ -165,7 +186,7 @@ th { background: var(--header-bg); font-weight: bold; }
 <th rowspan="2" class="retention-col">三日留存 (D+2)</th></tr>
 <tr><th>期間總人數</th><th>日均局數</th><th>人均局數</th><th>總RTP</th>
 <th>500-999倍</th><th>1000-1999倍</th><th>2000倍+</th></tr>
-</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>728</td><td>31,276</td><td>138</td><td>88.43%</td><td>2</td><td>0</td><td>0</td><td>0.4</td><td class="retention-col">15.4%</td></tr><tr class="new-row"><td>新版</td><td>324</td><td>2,085</td><td>163</td><td>89.59%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">13.5%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>471</td><td>48,420</td><td>128</td><td>87.94%</td><td>3</td><td>0</td><td>0</td><td>0.5</td><td class="retention-col">21.8%</td></tr><tr class="new-row"><td>新版</td><td>267</td><td>2,238</td><td>152</td><td>89.61%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">11.7%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>63</td><td>3,907</td><td>75</td><td>91.05%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">6.2%</td></tr><tr class="new-row"><td>新版</td><td>12</td><td>69</td><td>143</td><td>96.90%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">0.0%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 辣椒圓舞曲 分析小結</h4><p>優點：大盤數值與 RTP 收斂在正常範圍。缺點：活躍玩家人數大幅萎縮，玩家群體老化，留存率亦偏低，產品進入生命週期尾聲。</p></div></div><div class="game-section"><div class="game-title">吉利卡蛙</div>
+</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>728</td><td>31,276</td><td>138</td><td>88.43%</td><td>2</td><td>0</td><td>0</td><td>0.4</td><td class="retention-col">15.4%</td></tr><tr class="new-row"><td>新版</td><td>324</td><td>2,085</td><td>163</td><td>89.59%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">13.5%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>471</td><td>48,420</td><td>128</td><td>87.94%</td><td>3</td><td>0</td><td>0</td><td>0.5</td><td class="retention-col">21.8%</td></tr><tr class="new-row"><td>新版</td><td>267</td><td>2,238</td><td>152</td><td>89.61%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">11.7%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>63</td><td>3,907</td><td>75</td><td>91.05%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">6.2%</td></tr><tr class="new-row"><td>新版</td><td>12</td><td>69</td><td>143</td><td>96.90%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">0.0%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 辣椒圓舞曲 分析小結</h4><p>優點：大盤數值與 RTP 收斂在正常範圍。缺點：活躍玩家人數大幅萎縮，玩家群體老化，留存率亦偏低，產品進入生命週期尾聲。</p></div></div><div class="game-section" data-game="FuFrogKing"><div class="game-title">吉利卡蛙</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="p_dau_8"></canvas></div>
 <div class="chart-container"><canvas id="p_rtp_8"></canvas></div>
@@ -179,7 +200,7 @@ th { background: var(--header-bg); font-weight: bold; }
 <th rowspan="2" class="retention-col">三日留存 (D+2)</th></tr>
 <tr><th>期間總人數</th><th>日均局數</th><th>人均局數</th><th>總RTP</th>
 <th>500-999倍</th><th>1000-1999倍</th><th>2000倍+</th></tr>
-</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>213</td><td>16,808</td><td>177</td><td>94.42%</td><td>2</td><td>0</td><td>0</td><td>0.4</td><td class="retention-col">5.2%</td></tr><tr class="new-row"><td>新版</td><td>223</td><td>2,129</td><td>188</td><td>89.94%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">16.0%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>160</td><td>16,877</td><td>213</td><td>95.09%</td><td>2</td><td>0</td><td>0</td><td>0.4</td><td class="retention-col">13.2%</td></tr><tr class="new-row"><td>新版</td><td>164</td><td>2,641</td><td>197</td><td>94.45%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">16.8%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>37</td><td>5,259</td><td>200</td><td>128.81%</td><td>0</td><td>4</td><td>0</td><td>0.7</td><td class="retention-col">16.1%</td></tr><tr class="new-row"><td>新版</td><td>43</td><td>696</td><td>241</td><td>92.25%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">17.4%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 吉利卡蛙 分析小結</h4><p>優點：大戶 RTP 從舊版嚴重的 128.8% 收斂至 92.3% 的正常水位，止住倒貼虧損。缺點：大戶玩家基數極小（僅 43 人），且大戶的七日留存（7.2%）低於舊版表現。</p></div></div><div class="game-section"><div class="game-title">風暴賽特</div>
+</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>213</td><td>16,808</td><td>177</td><td>94.42%</td><td>2</td><td>0</td><td>0</td><td>0.4</td><td class="retention-col">5.2%</td></tr><tr class="new-row"><td>新版</td><td>223</td><td>2,129</td><td>188</td><td>89.94%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">16.0%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>160</td><td>16,877</td><td>213</td><td>95.09%</td><td>2</td><td>0</td><td>0</td><td>0.4</td><td class="retention-col">13.2%</td></tr><tr class="new-row"><td>新版</td><td>164</td><td>2,641</td><td>197</td><td>94.45%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">16.8%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>37</td><td>5,259</td><td>200</td><td>128.81%</td><td>0</td><td>4</td><td>0</td><td>0.7</td><td class="retention-col">16.1%</td></tr><tr class="new-row"><td>新版</td><td>43</td><td>696</td><td>241</td><td>92.25%</td><td>0</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">17.4%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 吉利卡蛙 分析小結</h4><p>優點：大戶 RTP 從舊版嚴重的 128.8% 收斂至 92.3% 的正常水位，止住倒貼虧損。缺點：大戶玩家基數極小（僅 43 人），且大戶的七日留存（7.2%）低於舊版表現。</p></div></div><div class="game-section" data-game="StormOfSeth"><div class="game-title">風暴賽特</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="p_dau_9"></canvas></div>
 <div class="chart-container"><canvas id="p_rtp_9"></canvas></div>
@@ -193,7 +214,7 @@ th { background: var(--header-bg); font-weight: bold; }
 <th rowspan="2" class="retention-col">三日留存 (D+2)</th></tr>
 <tr><th>期間總人數</th><th>日均局數</th><th>人均局數</th><th>總RTP</th>
 <th>500-999倍</th><th>1000-1999倍</th><th>2000倍+</th></tr>
-</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>418</td><td>28,907</td><td>203</td><td>98.15%</td><td>2</td><td>2</td><td>0</td><td>0.7</td><td class="retention-col">13.0%</td></tr><tr class="new-row"><td>新版</td><td>376</td><td>5,000</td><td>168</td><td>100.57%</td><td>4</td><td>0</td><td>1</td><td>0.2</td><td class="retention-col">17.1%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>293</td><td>32,461</td><td>341</td><td>104.65%</td><td>4</td><td>0</td><td>2</td><td>1.1</td><td class="retention-col">11.8%</td></tr><tr class="new-row"><td>新版</td><td>275</td><td>5,900</td><td>300</td><td>95.90%</td><td>1</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">9.5%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>68</td><td>7,599</td><td>316</td><td>93.13%</td><td>0</td><td>1</td><td>0</td><td>0.2</td><td class="retention-col">10.0%</td></tr><tr class="new-row"><td>新版</td><td>67</td><td>845</td><td>251</td><td>95.23%</td><td>2</td><td>0</td><td>0</td><td>0.1</td><td class="retention-col">7.1%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 風暴賽特 分析小結</h4><p>優點：大盤數值與 RTP 收斂在正常範圍。缺點：活躍玩家人數大幅萎縮，玩家群體老化，留存率亦偏低，產品進入生命週期尾聲。</p></div></div><div class="game-section"><div class="game-title">餘燼之刃</div>
+</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>418</td><td>28,907</td><td>203</td><td>98.15%</td><td>2</td><td>2</td><td>0</td><td>0.7</td><td class="retention-col">13.0%</td></tr><tr class="new-row"><td>新版</td><td>376</td><td>5,000</td><td>168</td><td>100.57%</td><td>4</td><td>0</td><td>1</td><td>0.2</td><td class="retention-col">17.1%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>293</td><td>32,461</td><td>341</td><td>104.65%</td><td>4</td><td>0</td><td>2</td><td>1.1</td><td class="retention-col">11.8%</td></tr><tr class="new-row"><td>新版</td><td>275</td><td>5,900</td><td>300</td><td>95.90%</td><td>1</td><td>0</td><td>0</td><td>0.0</td><td class="retention-col">9.5%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>68</td><td>7,599</td><td>316</td><td>93.13%</td><td>0</td><td>1</td><td>0</td><td>0.2</td><td class="retention-col">10.0%</td></tr><tr class="new-row"><td>新版</td><td>67</td><td>845</td><td>251</td><td>95.23%</td><td>2</td><td>0</td><td>0</td><td>0.1</td><td class="retention-col">7.1%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 風暴賽特 分析小結</h4><p>優點：大盤數值與 RTP 收斂在正常範圍。缺點：活躍玩家人數大幅萎縮，玩家群體老化，留存率亦偏低，產品進入生命週期尾聲。</p></div></div><div class="game-section" data-game="EmberBlade"><div class="game-title">餘燼之刃</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="p_dau_10"></canvas></div>
 <div class="chart-container"><canvas id="p_rtp_10"></canvas></div>
@@ -207,7 +228,7 @@ th { background: var(--header-bg); font-weight: bold; }
 <th rowspan="2" class="retention-col">三日留存 (D+2)</th></tr>
 <tr><th>期間總人數</th><th>日均局數</th><th>人均局數</th><th>總RTP</th>
 <th>500-999倍</th><th>1000-1999倍</th><th>2000倍+</th></tr>
-</thead><tbody><tr class="new-row"><td>0-499</td><td>新版</td><td>2,982</td><td>91,275</td><td>363</td><td>95.91%</td><td>81</td><td>9</td><td>10</td><td>3.6</td><td class="retention-col">21.1%</td></tr><tr class="new-row"><td>500-4999</td><td>新版</td><td>1,796</td><td>85,317</td><td>613</td><td>97.74%</td><td>86</td><td>19</td><td>10</td><td>4.2</td><td class="retention-col">26.5%</td></tr><tr class="new-row"><td>5000-99999</td><td>新版</td><td>434</td><td>16,587</td><td>616</td><td>100.81%</td><td>21</td><td>2</td><td>3</td><td>0.9</td><td class="retention-col">18.5%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 餘燼之刃 分析小結</h4><p>優點：新遊戲人氣高，吸引了大量活躍玩家（大戶達 434 人），大戶次日留存為 29.2%。缺點：大戶 RTP 目前在 100.8% 處於倒貼狀態，且因上線時間短，尚無七日留存數據。</p></div></div><div class="game-section"><div class="game-title">黃金帝國2</div>
+</thead><tbody><tr class="new-row"><td>0-499</td><td>新版</td><td>2,982</td><td>91,275</td><td>363</td><td>95.91%</td><td>81</td><td>9</td><td>10</td><td>3.6</td><td class="retention-col">21.1%</td></tr><tr class="new-row"><td>500-4999</td><td>新版</td><td>1,796</td><td>85,317</td><td>613</td><td>97.74%</td><td>86</td><td>19</td><td>10</td><td>4.2</td><td class="retention-col">26.5%</td></tr><tr class="new-row"><td>5000-99999</td><td>新版</td><td>434</td><td>16,587</td><td>616</td><td>100.81%</td><td>21</td><td>2</td><td>3</td><td>0.9</td><td class="retention-col">18.5%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 餘燼之刃 分析小結</h4><p>優點：新遊戲人氣高，吸引了大量活躍玩家（大戶達 434 人），大戶次日留存為 29.2%。缺點：大戶 RTP 目前在 100.8% 處於倒貼狀態，且因上線時間短，尚無七日留存數據。</p></div></div><div class="game-section" data-game="GoldEmpire2"><div class="game-title">黃金帝國2</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="p_dau_11"></canvas></div>
 <div class="chart-container"><canvas id="p_rtp_11"></canvas></div>
@@ -221,7 +242,7 @@ th { background: var(--header-bg); font-weight: bold; }
 <th rowspan="2" class="retention-col">三日留存 (D+2)</th></tr>
 <tr><th>期間總人數</th><th>日均局數</th><th>人均局數</th><th>總RTP</th>
 <th>500-999倍</th><th>1000-1999倍</th><th>2000倍+</th></tr>
-</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>904</td><td>87,874</td><td>192</td><td>96.64%</td><td>16</td><td>6</td><td>1</td><td>4.2</td><td class="retention-col">13.6%</td></tr><tr class="new-row"><td>新版</td><td>1,097</td><td>26,957</td><td>245</td><td>100.97%</td><td>25</td><td>9</td><td>2</td><td>1.3</td><td class="retention-col">22.0%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>607</td><td>122,410</td><td>272</td><td>96.93%</td><td>13</td><td>9</td><td>1</td><td>4.2</td><td class="retention-col">20.7%</td></tr><tr class="new-row"><td>新版</td><td>652</td><td>28,770</td><td>376</td><td>99.75%</td><td>22</td><td>4</td><td>2</td><td>1.0</td><td class="retention-col">31.4%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>143</td><td>25,491</td><td>547</td><td>99.68%</td><td>3</td><td>2</td><td>0</td><td>0.9</td><td class="retention-col">22.7%</td></tr><tr class="new-row"><td>新版</td><td>112</td><td>4,863</td><td>504</td><td>99.93%</td><td>5</td><td>1</td><td>0</td><td>0.2</td><td class="retention-col">24.7%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 黃金帝國2 分析小結</h4><p>優點：玩家留存深度好，中階三日留存達 31.4%，大戶七日留存達 14.5%。缺點：各區間 RTP 設定過高（中階 99.8%、大戶 99.9%），使得遊戲對營運幾乎沒有利潤空間。</p></div></div><div class="game-section"><div class="game-title">仙界傳說</div>
+</thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>904</td><td>87,874</td><td>192</td><td>96.64%</td><td>16</td><td>6</td><td>1</td><td>4.2</td><td class="retention-col">13.6%</td></tr><tr class="new-row"><td>新版</td><td>1,097</td><td>26,957</td><td>245</td><td>100.97%</td><td>25</td><td>9</td><td>2</td><td>1.3</td><td class="retention-col">22.0%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>607</td><td>122,410</td><td>272</td><td>96.93%</td><td>13</td><td>9</td><td>1</td><td>4.2</td><td class="retention-col">20.7%</td></tr><tr class="new-row"><td>新版</td><td>652</td><td>28,770</td><td>376</td><td>99.75%</td><td>22</td><td>4</td><td>2</td><td>1.0</td><td class="retention-col">31.4%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>143</td><td>25,491</td><td>547</td><td>99.68%</td><td>3</td><td>2</td><td>0</td><td>0.9</td><td class="retention-col">22.7%</td></tr><tr class="new-row"><td>新版</td><td>112</td><td>4,863</td><td>504</td><td>99.93%</td><td>5</td><td>1</td><td>0</td><td>0.2</td><td class="retention-col">24.7%</td></tr></tbody></table><div class="conclusion-box"><h4>📋 黃金帝國2 分析小結</h4><p>優點：玩家留存深度好，中階三日留存達 31.4%，大戶七日留存達 14.5%。缺點：各區間 RTP 設定過高（中階 99.8%、大戶 99.9%），使得遊戲對營運幾乎沒有利潤空間。</p></div></div><div class="game-section" data-game="ROSlot"><div class="game-title">仙界傳說</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="p_dau_12"></canvas></div>
 <div class="chart-container"><canvas id="p_rtp_12"></canvas></div>
@@ -244,79 +265,79 @@ th { background: var(--header-bg); font-weight: bold; }
 <li><strong>大 Bet 區間留存(D3 & D7)多數提升</strong>：新版戰神呂布大 Bet 三日留存為 18.8%，火燒赤壁三日留存達 20.7%，比舊版有不同程度改善。</li>
 <li><strong>部分區間出現留存下滑</strong>：雷霆之錘2中階三日留存跌至 31.5%，且老舊遊戲留存率普遍偏低，產品黏性呈現兩極化。</li></ul></div>
 </div>
-<div class="game-section"><div class="game-title">👥 辣椒圓舞曲2 留存分析</div>
+<div class="game-section" data-game="ChilliSlot2"><div class="game-title">👥 辣椒圓舞曲2 留存分析</div>
 <div class="charts-row" style="justify-content:center; gap:50px;">
 <div class="chart-container" style="max-width:550px"><canvas id="r_d1_0"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d3_0"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d7_0"></canvas></div>
 </div>
-<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>17.1%</td><td>10.2%</td><td class="retention-d7">0.0%</td></tr><tr class="new-row"><td>新版</td><td>20.4%</td><td>16.9%</td><td class="retention-d7">10.7%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>22.2%</td><td>14.0%</td><td class="retention-d7">0.0%</td></tr><tr class="new-row"><td>新版</td><td>47.5%</td><td>38.2%</td><td class="retention-d7">13.5%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>19.1%</td><td>10.1%</td><td class="retention-d7">0.0%</td></tr><tr class="new-row"><td>新版</td><td>24.8%</td><td>17.4%</td><td class="retention-d7">11.4%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">👥 雷霆之錘2 留存分析</div>
+<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>17.1%</td><td>10.2%</td><td class="retention-d7">0.0%</td></tr><tr class="new-row"><td>新版</td><td>20.4%</td><td>16.9%</td><td class="retention-d7">10.7%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>22.2%</td><td>14.0%</td><td class="retention-d7">0.0%</td></tr><tr class="new-row"><td>新版</td><td>47.5%</td><td>38.2%</td><td class="retention-d7">13.5%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>19.1%</td><td>10.1%</td><td class="retention-d7">0.0%</td></tr><tr class="new-row"><td>新版</td><td>24.8%</td><td>17.4%</td><td class="retention-d7">11.4%</td></tr></tbody></table></div><div class="game-section" data-game="PowerOfThunder2"><div class="game-title">👥 雷霆之錘2 留存分析</div>
 <div class="charts-row" style="justify-content:center; gap:50px;">
 <div class="chart-container" style="max-width:550px"><canvas id="r_d1_1"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d3_1"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d7_1"></canvas></div>
 </div>
-<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>24.1%</td><td>19.1%</td><td class="retention-d7">11.7%</td></tr><tr class="new-row"><td>新版</td><td>23.0%</td><td>18.3%</td><td class="retention-d7">11.8%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>55.3%</td><td>49.2%</td><td class="retention-d7">35.8%</td></tr><tr class="new-row"><td>新版</td><td>37.5%</td><td>31.5%</td><td class="retention-d7">18.1%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>29.6%</td><td>22.6%</td><td class="retention-d7">13.3%</td></tr><tr class="new-row"><td>新版</td><td>32.5%</td><td>23.3%</td><td class="retention-d7">13.9%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">👥 火燒赤壁 留存分析</div>
+<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>24.1%</td><td>19.1%</td><td class="retention-d7">11.7%</td></tr><tr class="new-row"><td>新版</td><td>23.0%</td><td>18.3%</td><td class="retention-d7">11.8%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>55.3%</td><td>49.2%</td><td class="retention-d7">35.8%</td></tr><tr class="new-row"><td>新版</td><td>37.5%</td><td>31.5%</td><td class="retention-d7">18.1%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>29.6%</td><td>22.6%</td><td class="retention-d7">13.3%</td></tr><tr class="new-row"><td>新版</td><td>32.5%</td><td>23.3%</td><td class="retention-d7">13.9%</td></tr></tbody></table></div><div class="game-section" data-game="RedCliffFire"><div class="game-title">👥 火燒赤壁 留存分析</div>
 <div class="charts-row" style="justify-content:center; gap:50px;">
 <div class="chart-container" style="max-width:550px"><canvas id="r_d1_2"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d3_2"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d7_2"></canvas></div>
 </div>
-<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>43.3%</td><td>36.8%</td><td class="retention-d7">27.9%</td></tr><tr class="new-row"><td>新版</td><td>39.5%</td><td>33.3%</td><td class="retention-d7">21.8%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>29.4%</td><td>18.0%</td><td class="retention-d7">6.5%</td></tr><tr class="new-row"><td>新版</td><td>55.5%</td><td>50.5%</td><td class="retention-d7">25.8%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>28.4%</td><td>17.1%</td><td class="retention-d7">9.4%</td></tr><tr class="new-row"><td>新版</td><td>26.5%</td><td>20.7%</td><td class="retention-d7">12.8%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">👥 英雄羅賓漢 留存分析</div>
+<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>43.3%</td><td>36.8%</td><td class="retention-d7">27.9%</td></tr><tr class="new-row"><td>新版</td><td>39.5%</td><td>33.3%</td><td class="retention-d7">21.8%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>29.4%</td><td>18.0%</td><td class="retention-d7">6.5%</td></tr><tr class="new-row"><td>新版</td><td>55.5%</td><td>50.5%</td><td class="retention-d7">25.8%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>28.4%</td><td>17.1%</td><td class="retention-d7">9.4%</td></tr><tr class="new-row"><td>新版</td><td>26.5%</td><td>20.7%</td><td class="retention-d7">12.8%</td></tr></tbody></table></div><div class="game-section" data-game="RobinHood"><div class="game-title">👥 英雄羅賓漢 留存分析</div>
 <div class="charts-row" style="justify-content:center; gap:50px;">
 <div class="chart-container" style="max-width:550px"><canvas id="r_d1_3"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d3_3"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d7_3"></canvas></div>
 </div>
-<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>27.7%</td><td>22.5%</td><td class="retention-d7">12.5%</td></tr><tr class="new-row"><td>新版</td><td>21.8%</td><td>17.5%</td><td class="retention-d7">8.6%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>27.8%</td><td>23.1%</td><td class="retention-d7">16.4%</td></tr><tr class="new-row"><td>新版</td><td>29.6%</td><td>29.0%</td><td class="retention-d7">14.9%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>11.2%</td><td>3.0%</td><td class="retention-d7">2.4%</td></tr><tr class="new-row"><td>新版</td><td>11.9%</td><td>7.4%</td><td class="retention-d7">2.2%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">👥 風暴賽特2 留存分析</div>
+<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>27.7%</td><td>22.5%</td><td class="retention-d7">12.5%</td></tr><tr class="new-row"><td>新版</td><td>21.8%</td><td>17.5%</td><td class="retention-d7">8.6%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>27.8%</td><td>23.1%</td><td class="retention-d7">16.4%</td></tr><tr class="new-row"><td>新版</td><td>29.6%</td><td>29.0%</td><td class="retention-d7">14.9%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>11.2%</td><td>3.0%</td><td class="retention-d7">2.4%</td></tr><tr class="new-row"><td>新版</td><td>11.9%</td><td>7.4%</td><td class="retention-d7">2.2%</td></tr></tbody></table></div><div class="game-section" data-game="StormOfSeth2"><div class="game-title">👥 風暴賽特2 留存分析</div>
 <div class="charts-row" style="justify-content:center; gap:50px;">
 <div class="chart-container" style="max-width:550px"><canvas id="r_d1_4"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d3_4"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d7_4"></canvas></div>
 </div>
-<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>31.9%</td><td>26.3%</td><td class="retention-d7">19.0%</td></tr><tr class="new-row"><td>新版</td><td>27.7%</td><td>24.1%</td><td class="retention-d7">17.0%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>40.6%</td><td>27.7%</td><td class="retention-d7">19.8%</td></tr><tr class="new-row"><td>新版</td><td>53.4%</td><td>47.8%</td><td class="retention-d7">24.6%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>27.6%</td><td>19.7%</td><td class="retention-d7">11.3%</td></tr><tr class="new-row"><td>新版</td><td>27.1%</td><td>22.1%</td><td class="retention-d7">12.0%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">👥 戰神呂布 留存分析</div>
+<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>31.9%</td><td>26.3%</td><td class="retention-d7">19.0%</td></tr><tr class="new-row"><td>新版</td><td>27.7%</td><td>24.1%</td><td class="retention-d7">17.0%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>40.6%</td><td>27.7%</td><td class="retention-d7">19.8%</td></tr><tr class="new-row"><td>新版</td><td>53.4%</td><td>47.8%</td><td class="retention-d7">24.6%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>27.6%</td><td>19.7%</td><td class="retention-d7">11.3%</td></tr><tr class="new-row"><td>新版</td><td>27.1%</td><td>22.1%</td><td class="retention-d7">12.0%</td></tr></tbody></table></div><div class="game-section" data-game="TKLuBu"><div class="game-title">👥 戰神呂布 留存分析</div>
 <div class="charts-row" style="justify-content:center; gap:50px;">
 <div class="chart-container" style="max-width:550px"><canvas id="r_d1_5"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d3_5"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d7_5"></canvas></div>
 </div>
-<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>19.9%</td><td>15.5%</td><td class="retention-d7">7.3%</td></tr><tr class="new-row"><td>新版</td><td>26.2%</td><td>21.0%</td><td class="retention-d7">14.2%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>24.6%</td><td>17.1%</td><td class="retention-d7">10.2%</td></tr><tr class="new-row"><td>新版</td><td>34.5%</td><td>33.0%</td><td class="retention-d7">15.5%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>25.9%</td><td>18.1%</td><td class="retention-d7">10.5%</td></tr><tr class="new-row"><td>新版</td><td>29.1%</td><td>18.8%</td><td class="retention-d7">11.0%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">👥 魔龍狂怒 留存分析</div>
+<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>19.9%</td><td>15.5%</td><td class="retention-d7">7.3%</td></tr><tr class="new-row"><td>新版</td><td>26.2%</td><td>21.0%</td><td class="retention-d7">14.2%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>24.6%</td><td>17.1%</td><td class="retention-d7">10.2%</td></tr><tr class="new-row"><td>新版</td><td>34.5%</td><td>33.0%</td><td class="retention-d7">15.5%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>25.9%</td><td>18.1%</td><td class="retention-d7">10.5%</td></tr><tr class="new-row"><td>新版</td><td>29.1%</td><td>18.8%</td><td class="retention-d7">11.0%</td></tr></tbody></table></div><div class="game-section" data-game="AngryDragon"><div class="game-title">👥 魔龍狂怒 留存分析</div>
 <div class="charts-row" style="justify-content:center; gap:50px;">
 <div class="chart-container" style="max-width:550px"><canvas id="r_d1_6"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d3_6"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d7_6"></canvas></div>
 </div>
-<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>32.4%</td><td>28.8%</td><td class="retention-d7">18.1%</td></tr><tr class="new-row"><td>新版</td><td>30.8%</td><td>24.8%</td><td class="retention-d7">16.7%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>16.1%</td><td>9.6%</td><td class="retention-d7">6.3%</td></tr><tr class="new-row"><td>新版</td><td>21.8%</td><td>17.4%</td><td class="retention-d7">5.9%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>27.7%</td><td>19.2%</td><td class="retention-d7">9.2%</td></tr><tr class="new-row"><td>新版</td><td>20.0%</td><td>11.2%</td><td class="retention-d7">6.4%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">👥 辣椒圓舞曲 留存分析</div>
+<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>32.4%</td><td>28.8%</td><td class="retention-d7">18.1%</td></tr><tr class="new-row"><td>新版</td><td>30.8%</td><td>24.8%</td><td class="retention-d7">16.7%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>16.1%</td><td>9.6%</td><td class="retention-d7">6.3%</td></tr><tr class="new-row"><td>新版</td><td>21.8%</td><td>17.4%</td><td class="retention-d7">5.9%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>27.7%</td><td>19.2%</td><td class="retention-d7">9.2%</td></tr><tr class="new-row"><td>新版</td><td>20.0%</td><td>11.2%</td><td class="retention-d7">6.4%</td></tr></tbody></table></div><div class="game-section" data-game="ChilliSlot"><div class="game-title">👥 辣椒圓舞曲 留存分析</div>
 <div class="charts-row" style="justify-content:center; gap:50px;">
 <div class="chart-container" style="max-width:550px"><canvas id="r_d1_7"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d3_7"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d7_7"></canvas></div>
 </div>
-<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>23.0%</td><td>15.4%</td><td class="retention-d7">10.9%</td></tr><tr class="new-row"><td>新版</td><td>21.7%</td><td>13.5%</td><td class="retention-d7">7.5%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>25.8%</td><td>21.8%</td><td class="retention-d7">13.3%</td></tr><tr class="new-row"><td>新版</td><td>17.5%</td><td>11.7%</td><td class="retention-d7">10.6%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>7.5%</td><td>6.2%</td><td class="retention-d7">3.8%</td></tr><tr class="new-row"><td>新版</td><td>7.1%</td><td>0.0%</td><td class="retention-d7">0.0%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">👥 吉利卡蛙 留存分析</div>
+<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>23.0%</td><td>15.4%</td><td class="retention-d7">10.9%</td></tr><tr class="new-row"><td>新版</td><td>21.7%</td><td>13.5%</td><td class="retention-d7">7.5%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>25.8%</td><td>21.8%</td><td class="retention-d7">13.3%</td></tr><tr class="new-row"><td>新版</td><td>17.5%</td><td>11.7%</td><td class="retention-d7">10.6%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>7.5%</td><td>6.2%</td><td class="retention-d7">3.8%</td></tr><tr class="new-row"><td>新版</td><td>7.1%</td><td>0.0%</td><td class="retention-d7">0.0%</td></tr></tbody></table></div><div class="game-section" data-game="FuFrogKing"><div class="game-title">👥 吉利卡蛙 留存分析</div>
 <div class="charts-row" style="justify-content:center; gap:50px;">
 <div class="chart-container" style="max-width:550px"><canvas id="r_d1_8"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d3_8"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d7_8"></canvas></div>
 </div>
-<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>10.5%</td><td>5.2%</td><td class="retention-d7">3.8%</td></tr><tr class="new-row"><td>新版</td><td>23.0%</td><td>16.0%</td><td class="retention-d7">6.3%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>19.9%</td><td>13.2%</td><td class="retention-d7">7.7%</td></tr><tr class="new-row"><td>新版</td><td>29.5%</td><td>16.8%</td><td class="retention-d7">21.2%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>22.6%</td><td>16.1%</td><td class="retention-d7">11.3%</td></tr><tr class="new-row"><td>新版</td><td>17.4%</td><td>17.4%</td><td class="retention-d7">7.2%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">👥 風暴賽特 留存分析</div>
+<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>10.5%</td><td>5.2%</td><td class="retention-d7">3.8%</td></tr><tr class="new-row"><td>新版</td><td>23.0%</td><td>16.0%</td><td class="retention-d7">6.3%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>19.9%</td><td>13.2%</td><td class="retention-d7">7.7%</td></tr><tr class="new-row"><td>新版</td><td>29.5%</td><td>16.8%</td><td class="retention-d7">21.2%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>22.6%</td><td>16.1%</td><td class="retention-d7">11.3%</td></tr><tr class="new-row"><td>新版</td><td>17.4%</td><td>17.4%</td><td class="retention-d7">7.2%</td></tr></tbody></table></div><div class="game-section" data-game="StormOfSeth"><div class="game-title">👥 風暴賽特 留存分析</div>
 <div class="charts-row" style="justify-content:center; gap:50px;">
 <div class="chart-container" style="max-width:550px"><canvas id="r_d1_9"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d3_9"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d7_9"></canvas></div>
 </div>
-<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>13.9%</td><td>13.0%</td><td class="retention-d7">8.3%</td></tr><tr class="new-row"><td>新版</td><td>22.0%</td><td>17.1%</td><td class="retention-d7">10.7%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>15.9%</td><td>11.8%</td><td class="retention-d7">9.0%</td></tr><tr class="new-row"><td>新版</td><td>15.3%</td><td>9.5%</td><td class="retention-d7">7.8%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>22.7%</td><td>10.0%</td><td class="retention-d7">8.2%</td></tr><tr class="new-row"><td>新版</td><td>11.1%</td><td>7.1%</td><td class="retention-d7">1.0%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">👥 餘燼之刃 留存分析</div>
+<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>13.9%</td><td>13.0%</td><td class="retention-d7">8.3%</td></tr><tr class="new-row"><td>新版</td><td>22.0%</td><td>17.1%</td><td class="retention-d7">10.7%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>15.9%</td><td>11.8%</td><td class="retention-d7">9.0%</td></tr><tr class="new-row"><td>新版</td><td>15.3%</td><td>9.5%</td><td class="retention-d7">7.8%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>22.7%</td><td>10.0%</td><td class="retention-d7">8.2%</td></tr><tr class="new-row"><td>新版</td><td>11.1%</td><td>7.1%</td><td class="retention-d7">1.0%</td></tr></tbody></table></div><div class="game-section" data-game="EmberBlade"><div class="game-title">👥 餘燼之刃 留存分析</div>
 <div class="charts-row" style="justify-content:center; gap:50px;">
 <div class="chart-container" style="max-width:550px"><canvas id="r_d1_10"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d3_10"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d7_10"></canvas></div>
 </div>
-<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>0.0%</td><td>0.0%</td><td class="retention-d7">0.0%</td></tr><tr class="new-row"><td>新版</td><td>29.9%</td><td>21.1%</td><td class="retention-d7">0.0%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>0.0%</td><td>0.0%</td><td class="retention-d7">0.0%</td></tr><tr class="new-row"><td>新版</td><td>39.8%</td><td>26.5%</td><td class="retention-d7">0.0%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>0.0%</td><td>0.0%</td><td class="retention-d7">0.0%</td></tr><tr class="new-row"><td>新版</td><td>29.2%</td><td>18.5%</td><td class="retention-d7">0.0%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">👥 黃金帝國2 留存分析</div>
+<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>0.0%</td><td>0.0%</td><td class="retention-d7">0.0%</td></tr><tr class="new-row"><td>新版</td><td>29.9%</td><td>21.1%</td><td class="retention-d7">0.0%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>0.0%</td><td>0.0%</td><td class="retention-d7">0.0%</td></tr><tr class="new-row"><td>新版</td><td>39.8%</td><td>26.5%</td><td class="retention-d7">0.0%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>0.0%</td><td>0.0%</td><td class="retention-d7">0.0%</td></tr><tr class="new-row"><td>新版</td><td>29.2%</td><td>18.5%</td><td class="retention-d7">0.0%</td></tr></tbody></table></div><div class="game-section" data-game="GoldEmpire2"><div class="game-title">👥 黃金帝國2 留存分析</div>
 <div class="charts-row" style="justify-content:center; gap:50px;">
 <div class="chart-container" style="max-width:550px"><canvas id="r_d1_11"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d3_11"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d7_11"></canvas></div>
 </div>
-<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>17.1%</td><td>13.6%</td><td class="retention-d7">10.4%</td></tr><tr class="new-row"><td>新版</td><td>25.8%</td><td>22.0%</td><td class="retention-d7">14.6%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>27.6%</td><td>20.7%</td><td class="retention-d7">13.9%</td></tr><tr class="new-row"><td>新版</td><td>37.1%</td><td>31.4%</td><td class="retention-d7">20.7%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>27.6%</td><td>22.7%</td><td class="retention-d7">13.2%</td></tr><tr class="new-row"><td>新版</td><td>30.5%</td><td>24.7%</td><td class="retention-d7">14.5%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">👥 仙界傳說 留存分析</div>
+<table><thead><tr><th>區間</th><th>版本</th><th>次日留存 (D1)</th><th>三日留存 (D3)</th><th class="retention-d7">七日留存 (D7)</th></tr></thead><tbody><tr class="old-row"><td rowspan="2">0-499</td><td>舊版</td><td>17.1%</td><td>13.6%</td><td class="retention-d7">10.4%</td></tr><tr class="new-row"><td>新版</td><td>25.8%</td><td>22.0%</td><td class="retention-d7">14.6%</td></tr><tr class="old-row"><td rowspan="2">500-4999</td><td>舊版</td><td>27.6%</td><td>20.7%</td><td class="retention-d7">13.9%</td></tr><tr class="new-row"><td>新版</td><td>37.1%</td><td>31.4%</td><td class="retention-d7">20.7%</td></tr><tr class="old-row"><td rowspan="2">5000-99999</td><td>舊版</td><td>27.6%</td><td>22.7%</td><td class="retention-d7">13.2%</td></tr><tr class="new-row"><td>新版</td><td>30.5%</td><td>24.7%</td><td class="retention-d7">14.5%</td></tr></tbody></table></div><div class="game-section" data-game="ROSlot"><div class="game-title">👥 仙界傳說 留存分析</div>
 <div class="charts-row" style="justify-content:center; gap:50px;">
 <div class="chart-container" style="max-width:550px"><canvas id="r_d1_12"></canvas></div>
 <div class="chart-container" style="max-width:550px"><canvas id="r_d3_12"></canvas></div>
@@ -326,62 +347,62 @@ th { background: var(--header-bg); font-weight: bold; }
 </div>
 
 <div id="buy" class="tab-content">
-<div class="game-section"><div class="game-title">💎 辣椒圓舞曲2 購買免遊分析 (日均)</div>
+<div class="game-section" data-game="ChilliSlot2"><div class="game-title">💎 辣椒圓舞曲2 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_0"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_0"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>免遊1-10線</td><td>141</td><td>41.5</td><td>795,454</td><td>765,663</td><td>96.25%</td></tr><tr><td>免遊1-20線</td><td>95</td><td>46.3</td><td>1,025,818</td><td>961,127</td><td>93.69%</td></tr><tr><td>免遊1-40線</td><td>196</td><td>151.4</td><td>12,964,363</td><td>13,179,168</td><td>101.66%</td></tr><tr><td>免遊2-10線</td><td>89</td><td>99.9</td><td>15,649,636</td><td>16,169,712</td><td>103.32%</td></tr><tr><td>免遊2-20線</td><td>52</td><td>49.2</td><td>19,083,272</td><td>18,179,307</td><td>95.26%</td></tr><tr><td>免遊2-40線</td><td>128</td><td>91.3</td><td>127,180,363</td><td>126,552,141</td><td>99.51%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 雷霆之錘2 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>免遊1-10線</td><td>141</td><td>41.5</td><td>795,454</td><td>765,663</td><td>96.25%</td></tr><tr><td>免遊1-20線</td><td>95</td><td>46.3</td><td>1,025,818</td><td>961,127</td><td>93.69%</td></tr><tr><td>免遊1-40線</td><td>196</td><td>151.4</td><td>12,964,363</td><td>13,179,168</td><td>101.66%</td></tr><tr><td>免遊2-10線</td><td>89</td><td>99.9</td><td>15,649,636</td><td>16,169,712</td><td>103.32%</td></tr><tr><td>免遊2-20線</td><td>52</td><td>49.2</td><td>19,083,272</td><td>18,179,307</td><td>95.26%</td></tr><tr><td>免遊2-40線</td><td>128</td><td>91.3</td><td>127,180,363</td><td>126,552,141</td><td>99.51%</td></tr></tbody></table></div><div class="game-section" data-game="PowerOfThunder2"><div class="game-title">💎 雷霆之錘2 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_1"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_1"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>325</td><td>128.9</td><td>7,926,545</td><td>7,410,582</td><td>93.49%</td></tr><tr><td>購買免遊2</td><td>209</td><td>78.5</td><td>18,207,272</td><td>16,772,767</td><td>92.12%</td></tr><tr><td>購買免遊3</td><td>68</td><td>106.4</td><td>59,332,512</td><td>55,043,709</td><td>92.77%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 火燒赤壁 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>325</td><td>128.9</td><td>7,926,545</td><td>7,410,582</td><td>93.49%</td></tr><tr><td>購買免遊2</td><td>209</td><td>78.5</td><td>18,207,272</td><td>16,772,767</td><td>92.12%</td></tr><tr><td>購買免遊3</td><td>68</td><td>106.4</td><td>59,332,512</td><td>55,043,709</td><td>92.77%</td></tr></tbody></table></div><div class="game-section" data-game="RedCliffFire"><div class="game-title">💎 火燒赤壁 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_2"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_2"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>189</td><td>132.0</td><td>11,846,545</td><td>11,210,605</td><td>94.63%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 英雄羅賓漢 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>189</td><td>132.0</td><td>11,846,545</td><td>11,210,605</td><td>94.63%</td></tr></tbody></table></div><div class="game-section" data-game="RobinHood"><div class="game-title">💎 英雄羅賓漢 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_3"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_3"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>14</td><td>2.4</td><td>282,181</td><td>270,895</td><td>96.00%</td></tr><tr><td>購買免遊2</td><td>10</td><td>0.8</td><td>181,090</td><td>126,940</td><td>70.10%</td></tr><tr><td>購買免遊3</td><td>30</td><td>4.1</td><td>382,545</td><td>244,162</td><td>63.83%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 風暴賽特2 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>14</td><td>2.4</td><td>282,181</td><td>270,895</td><td>96.00%</td></tr><tr><td>購買免遊2</td><td>10</td><td>0.8</td><td>181,090</td><td>126,940</td><td>70.10%</td></tr><tr><td>購買免遊3</td><td>30</td><td>4.1</td><td>382,545</td><td>244,162</td><td>63.83%</td></tr></tbody></table></div><div class="game-section" data-game="StormOfSeth2"><div class="game-title">💎 風暴賽特2 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_4"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_4"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>284</td><td>193.9</td><td>16,867,272</td><td>15,629,026</td><td>92.66%</td></tr><tr><td>購買免遊2</td><td>109</td><td>33.7</td><td>10,690,909</td><td>10,217,589</td><td>95.57%</td></tr><tr><td>購買免遊3</td><td>24</td><td>32.8</td><td>14,509,090</td><td>14,189,818</td><td>97.80%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 戰神呂布 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>284</td><td>193.9</td><td>16,867,272</td><td>15,629,026</td><td>92.66%</td></tr><tr><td>購買免遊2</td><td>109</td><td>33.7</td><td>10,690,909</td><td>10,217,589</td><td>95.57%</td></tr><tr><td>購買免遊3</td><td>24</td><td>32.8</td><td>14,509,090</td><td>14,189,818</td><td>97.80%</td></tr></tbody></table></div><div class="game-section" data-game="TKLuBu"><div class="game-title">💎 戰神呂布 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_5"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_5"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>125</td><td>23.8</td><td>1,956,727</td><td>1,472,675</td><td>75.26%</td></tr><tr><td>購買免遊2</td><td>179</td><td>43.9</td><td>5,395,272</td><td>5,092,828</td><td>94.39%</td></tr><tr><td>購買免遊3</td><td>149</td><td>148.1</td><td>210,035,636</td><td>205,800,460</td><td>97.98%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 魔龍狂怒 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>125</td><td>23.8</td><td>1,956,727</td><td>1,472,675</td><td>75.26%</td></tr><tr><td>購買免遊2</td><td>179</td><td>43.9</td><td>5,395,272</td><td>5,092,828</td><td>94.39%</td></tr><tr><td>購買免遊3</td><td>149</td><td>148.1</td><td>210,035,636</td><td>205,800,460</td><td>97.98%</td></tr></tbody></table></div><div class="game-section" data-game="AngryDragon"><div class="game-title">💎 魔龍狂怒 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_6"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_6"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>43</td><td>23.5</td><td>1,244,000</td><td>1,257,426</td><td>101.08%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 辣椒圓舞曲 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>43</td><td>23.5</td><td>1,244,000</td><td>1,257,426</td><td>101.08%</td></tr></tbody></table></div><div class="game-section" data-game="ChilliSlot"><div class="game-title">💎 辣椒圓舞曲 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_7"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_7"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>13</td><td>1.9</td><td>54,727</td><td>29,446</td><td>53.81%</td></tr><tr><td>購買免遊2</td><td>7</td><td>4.5</td><td>103,636</td><td>88,547</td><td>85.44%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 吉利卡蛙 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>13</td><td>1.9</td><td>54,727</td><td>29,446</td><td>53.81%</td></tr><tr><td>購買免遊2</td><td>7</td><td>4.5</td><td>103,636</td><td>88,547</td><td>85.44%</td></tr></tbody></table></div><div class="game-section" data-game="FuFrogKing"><div class="game-title">💎 吉利卡蛙 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_8"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_8"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>4</td><td>0.3</td><td>8,000</td><td>5,652</td><td>70.66%</td></tr><tr><td>購買免遊2</td><td>11</td><td>1.2</td><td>162,181</td><td>175,334</td><td>108.11%</td></tr><tr><td>購買免遊3</td><td>26</td><td>8.0</td><td>694,181</td><td>690,888</td><td>99.53%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 風暴賽特 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>4</td><td>0.3</td><td>8,000</td><td>5,652</td><td>70.66%</td></tr><tr><td>購買免遊2</td><td>11</td><td>1.2</td><td>162,181</td><td>175,334</td><td>108.11%</td></tr><tr><td>購買免遊3</td><td>26</td><td>8.0</td><td>694,181</td><td>690,888</td><td>99.53%</td></tr></tbody></table></div><div class="game-section" data-game="StormOfSeth"><div class="game-title">💎 風暴賽特 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_9"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_9"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>72</td><td>36.4</td><td>2,019,636</td><td>1,992,755</td><td>98.67%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 餘燼之刃 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>72</td><td>36.4</td><td>2,019,636</td><td>1,992,755</td><td>98.67%</td></tr></tbody></table></div><div class="game-section" data-game="EmberBlade"><div class="game-title">💎 餘燼之刃 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_10"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_10"></canvas></div>
 </div>
-<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>143</td><td>27.8</td><td>7,242,727</td><td>6,052,511</td><td>83.57%</td></tr><tr><td>購買免遊2</td><td>152</td><td>22.4</td><td>7,578,181</td><td>5,948,341</td><td>78.49%</td></tr><tr><td>購買免遊3</td><td>261</td><td>87.6</td><td>5,477,818</td><td>5,675,934</td><td>103.62%</td></tr><tr><td>購買免遊4</td><td>227</td><td>85.7</td><td>2,762,181</td><td>1,768,011</td><td>64.01%</td></tr><tr><td>購買免遊5</td><td>370</td><td>1567.1</td><td>12,561,145</td><td>12,245,369</td><td>97.49%</td></tr></tbody></table></div><div class="game-section"><div class="game-title">💎 仙界傳說 購買免遊分析 (日均)</div>
+<table><thead><tr><th>購買項目</th><th>人數</th><th>日均次數</th><th>日均押注</th><th>日均贏分</th><th>RTP</th></tr></thead><tbody><tr><td>購買免遊1</td><td>143</td><td>27.8</td><td>7,242,727</td><td>6,052,511</td><td>83.57%</td></tr><tr><td>購買免遊2</td><td>152</td><td>22.4</td><td>7,578,181</td><td>5,948,341</td><td>78.49%</td></tr><tr><td>購買免遊3</td><td>261</td><td>87.6</td><td>5,477,818</td><td>5,675,934</td><td>103.62%</td></tr><tr><td>購買免遊4</td><td>227</td><td>85.7</td><td>2,762,181</td><td>1,768,011</td><td>64.01%</td></tr><tr><td>購買免遊5</td><td>370</td><td>1567.1</td><td>12,561,145</td><td>12,245,369</td><td>97.49%</td></tr></tbody></table></div><div class="game-section" data-game="ROSlot"><div class="game-title">💎 仙界傳說 購買免遊分析 (日均)</div>
 <div class="charts-row">
 <div class="chart-container"><canvas id="b_rtp_11"></canvas></div>
 <div class="chart-container"><canvas id="b_cnt_11"></canvas></div>
@@ -395,91 +416,91 @@ th { background: var(--header-bg); font-weight: bold; }
 <li><strong>RTP 穩定度</strong>：觀察紅線 (5000+) 與黃線 (500-4999) 的 RTP 是否在合理範圍內震盪。若單日飆高超過 150%，代表該日大獎噴發。</li>
 <li><strong>熱度衰退斜率</strong>：觀察各區間每日局數走勢。平穩或微幅上升代表玩家體驗良好；若呈現斷崖式下跌，代表存在初見流失問題。</li></ul></div>
 </div>
-<div class="game-section"><div class="game-title">📈 辣椒圓舞曲2 每日走勢</div>
+<div class="game-section" data-game="ChilliSlot2"><div class="game-title">📈 辣椒圓舞曲2 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_0"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_0"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_0"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 雷霆之錘2 每日走勢</div>
+</div></div><div class="game-section" data-game="PowerOfThunder2"><div class="game-title">📈 雷霆之錘2 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_1"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_1"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_1"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 火燒赤壁 每日走勢</div>
+</div></div><div class="game-section" data-game="RedCliffFire"><div class="game-title">📈 火燒赤壁 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_2"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_2"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_2"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 英雄羅賓漢 每日走勢</div>
+</div></div><div class="game-section" data-game="RobinHood"><div class="game-title">📈 英雄羅賓漢 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_3"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_3"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_3"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 風暴賽特2 每日走勢</div>
+</div></div><div class="game-section" data-game="StormOfSeth2"><div class="game-title">📈 風暴賽特2 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_4"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_4"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_4"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 戰神呂布 每日走勢</div>
+</div></div><div class="game-section" data-game="TKLuBu"><div class="game-title">📈 戰神呂布 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_5"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_5"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_5"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 魔龍狂怒 每日走勢</div>
+</div></div><div class="game-section" data-game="AngryDragon"><div class="game-title">📈 魔龍狂怒 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_6"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_6"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_6"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 辣椒圓舞曲 每日走勢</div>
+</div></div><div class="game-section" data-game="ChilliSlot"><div class="game-title">📈 辣椒圓舞曲 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_7"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_7"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_7"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 吉利卡蛙 每日走勢</div>
+</div></div><div class="game-section" data-game="FuFrogKing"><div class="game-title">📈 吉利卡蛙 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_8"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_8"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_8"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 風暴賽特 每日走勢</div>
+</div></div><div class="game-section" data-game="StormOfSeth"><div class="game-title">📈 風暴賽特 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_9"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_9"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_9"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 餘燼之刃 每日走勢</div>
+</div></div><div class="game-section" data-game="EmberBlade"><div class="game-title">📈 餘燼之刃 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_10"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_10"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_10"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 黃金帝國2 每日走勢</div>
+</div></div><div class="game-section" data-game="GoldEmpire2"><div class="game-title">📈 黃金帝國2 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_11"></canvas></div>
 </div>
 <div class="charts-row" style="gap:20px;">
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_rnd_11"></canvas></div>
 <div class="chart-container" style="flex:1; height: 350px;"><canvas id="t_dau_11"></canvas></div>
-</div></div><div class="game-section"><div class="game-title">📈 仙界傳說 每日走勢</div>
+</div></div><div class="game-section" data-game="ROSlot"><div class="game-title">📈 仙界傳說 每日走勢</div>
 <div class="charts-row" style="margin-bottom: 20px;">
 <div class="chart-container" style="width:100%; height: 300px;"><canvas id="t_rtp_12"></canvas></div>
 </div>
@@ -497,6 +518,20 @@ function openTab(tabName) {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.getElementById(tabName).style.display = 'block';
     event.currentTarget.classList.add('active');
+}
+function filterGame(gameKey) {
+    document.querySelectorAll('.game-section').forEach(el => {
+        const g = el.getAttribute('data-game');
+        if (gameKey === 'all' || !g || g === gameKey) {
+            el.style.display = 'block';
+        } else {
+            el.style.display = 'none';
+        }
+    });
+    const selectEl = document.getElementById('global-game-select');
+    if (selectEl && selectEl.value !== gameKey) {
+        selectEl.value = gameKey;
+    }
 }
 const pOps = { responsive: true, maintainAspectRatio: false, plugins: { datalabels: { anchor: 'end', align: 'top', font: { weight: 'bold', size: 9 } } } };
 const rOps = { 
